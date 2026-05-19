@@ -1,0 +1,59 @@
+# Flutter / Dart
+.dart_tool/
+.pub/
+.pub-cache/
+.packages
+build/
+flutter_*.png
+.dart_plugins
+.dart_tool/package_config.json
+
+# Android
+android/app/.cxx/
+android/app/build/
+android/.gradle/
+android/local.properties
+android/*.iml
+
+# iOS
+ios/.symlinks/
+ios/Pods/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Runner.xcworkspace/
+ios/Runner.xcodeproj/project.xcworkspace/
+ios/Runner.xcodeproj/xcuserdata/
+ios/Podfile.lock
+
+# macOS (if you have desktop support)
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Flutter/ephemeral/
+
+# Web (optional)
+web/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*.iml
+*.class
+*.log
+*.lock
+*.pid
+*.tmp
+
+# Keys & secrets (if any)
+*.p12
+*.p8
+GoogleService-Info.plist
+firebase_options.dart
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
