@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CallisthWout - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#eae0de",
+                        "inverse-surface": "#313030",
+                        "surface-bright": "#fdf8f8",
+                        "on-secondary-container": "#626266",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#4b4644",
+                        "secondary-container": "#e0dfe3",
+                        "legs-accent-dark": "#2BBF8F",
+                        "primary": "#010102",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-tertiary-container": "#8a8381",
+                        "on-primary-fixed-variant": "#474649",
+                        "tertiary": "#010100",
+                        "surface-container": "#f1edec",
+                        "surface": "#fdf8f8",
+                        "secondary-fixed": "#e3e2e6",
+                        "surface-variant": "#e5e2e1",
+                        "primary-container": "#1c1c1e",
+                        "inverse-primary": "#c8c6c8",
+                        "success-dark": "#30B350",
+                        "surface-container-low": "#f7f3f2",
+                        "pull-accent": "#378ADD",
+                        "border-dark": "#38383A",
+                        "error-container": "#ffdad6",
+                        "border-light": "#E5E5EA",
+                        "push-accent": "#D85A30",
+                        "on-tertiary-fixed": "#1f1b1a",
+                        "on-primary-fixed": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "outline-variant": "#c7c6ca",
+                        "tertiary-container": "#1f1b1a",
+                        "pull-accent-dark": "#5BA0D9",
+                        "push-accent-dark": "#E57342",
+                        "primary-fixed": "#e4e2e4",
+                        "bg-secondary-light": "#F5F5F5",
+                        "on-error-container": "#93000a",
+                        "legs-accent": "#1D9E75",
+                        "surface-dim": "#ddd9d9",
+                        "outline": "#77767b",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#858486",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c8",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#46464a",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6ca",
+                        "on-secondary-fixed": "#1b1b1f",
+                        "tertiary-fixed-dim": "#cdc5c3",
+                        "surface-tint": "#5f5e60",
+                        "secondary": "#5e5e62",
+                        "on-surface-variant": "#46464a",
+                        "background": "#fdf8f8",
+                        "on-background": "#1c1b1b",
+                        "success": "#34C759",
+                        "bg-secondary-dark": "#1E1E1E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-sm": "0.5rem",
+                        "stack-gap-md": "1rem",
+                        "stack-gap-lg": "1.5rem",
+                        "timer-safe-area": "3rem",
+                        "container-margin": "1rem"
+                    },
+                    "fontFamily": {
+                        "timer-display": ["JetBrains Mono"],
+                        "subheadline": ["Lexend"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-main": ["Lexend"],
+                        "body-secondary": ["Lexend"],
+                        "body-primary": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "timer-display": ["48px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "subheadline": ["17px", { "lineHeight": "22px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-main": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-secondary": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-primary": ["17px", { "lineHeight": "22px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .floating-label-group {
+            position: relative;
+        }
+        .floating-label-group input {
+            padding-top: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .floating-label-group label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+            color: #77767b; /* outline */
+        }
+        .floating-label-group input:focus + label,
+        .floating-label-group input:not(:placeholder-shown) + label {
+            top: 0.75rem;
+            font-size: 0.75rem;
+            transform: translateY(-50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+<main class="flex-grow flex flex-col items-center justify-center p-container-margin w-full max-w-md mx-auto">
+<div class="mb-stack-gap-lg flex flex-col items-center">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mb-stack-gap-sm shadow-sm">
+<span class="material-symbols-outlined text-4xl text-push-accent">fitness_center</span>
+</div>
+<h1 class="font-headline-main text-headline-main text-primary text-center">CallisthWout</h1>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant mt-2 text-center">Sign in to continue your training.</p>
+</div>
+<div class="w-full space-y-stack-gap-md bg-surface p-6 rounded-xl shadow-sm border border-outline-variant">
+<div class="floating-label-group">
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 font-body-primary text-body-primary text-on-surface focus:border-push-accent focus:ring-1 focus:ring-push-accent outline-none transition-colors" id="email" placeholder=" " type="email"/>
+<label class="font-body-secondary text-body-secondary" for="email">Email address</label>
+</div>
+<div class="floating-label-group">
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 font-body-primary text-body-primary text-on-surface focus:border-push-accent focus:ring-1 focus:ring-push-accent outline-none transition-colors" id="password" placeholder=" " type="password"/>
+<label class="font-body-secondary text-body-secondary" for="password">Password</label>
+</div>
+<div class="flex justify-end w-full">
+<a class="font-body-secondary text-body-secondary text-push-accent hover:text-push-accent-dark transition-colors" href="#">Forgot password?</a>
+</div>
+<button class="w-full bg-push-accent hover:bg-push-accent-dark text-on-primary font-subheadline text-subheadline py-3 rounded-[12px] transition-colors shadow-sm mt-stack-gap-sm">
+                Sign In
+            </button>
+<div class="relative flex py-5 items-center">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink-0 mx-4 font-label-caps text-label-caps text-on-surface-variant">OR CONTINUE WITH</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<div class="flex flex-col space-y-stack-gap-sm">
+<button class="w-full bg-surface-container border border-outline-variant hover:bg-surface-container-high text-on-surface font-subheadline text-subheadline py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+<img alt="Google Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd2WfZiTI-Om6Di_x4jD84coFcwiS1ysW1Ie3qr1OWQyzdlv3UElwpfYyKLrkaJBSwHzW7RHHuK_s_ruZdJ_1C1PwmRWoEO6AR_zFlIifI95mnnqqmfaofB9tC5FDYo4fu0pp2aZwHje_-hdiF12pFSMoTqqO3KOHmHyUDKEz-CZJXCZSDWI2rJP_nKxEvqwoNFexNs4PqIFE9LTAnMTSx1G_ZN0I-2l430erxt3AiSlfYALSlIY_MxR8lFxaakOLQWA8QwvM6aZo"/>
+                    Google
+                </button>
+<button class="w-full bg-surface-container border border-outline-variant hover:bg-surface-container-high text-on-surface font-subheadline text-subheadline py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+<img alt="Apple Logo" class="w-5 h-5 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_PW2eAZImsu11qIP2jsY2fBDQq98JeReHytYbO5Y6EgQ3DESr3N_no38tZ1xRSRN3UpxHZsKjg9VjH3-EC02-rKbMPyL7HlMt-vigmJz6lHpvT1MZ3gHx2nhxNZKzYJ_vRozL0a191R_D0M9U-wfmNl8HwWY-IDexsQ1GzQz2QVgTTrqmpkaBVCYJLS5jdArKW61cAiBPFzrxQCITl32F8PN4N65Smn9Uhi4b3EFI9RKGT-PupcWg66mCBu6RXSYr8shlT56lKfM"/>
+                    Apple
+                </button>
+</div>
+</div>
+<div class="mt-stack-gap-lg font-body-secondary text-body-secondary text-on-surface-variant text-center">
+            Don't have an account? <a class="text-push-accent hover:text-push-accent-dark font-subheadline text-subheadline" href="#">Sign Up</a>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#eae0de",
+                    "inverse-surface": "#313030",
+                    "surface-bright": "#fdf8f8",
+                    "on-secondary-container": "#626266",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#4b4644",
+                    "secondary-container": "#e0dfe3",
+                    "legs-accent-dark": "#2BBF8F",
+                    "primary": "#010102",
+                    "inverse-on-surface": "#f4f0ef",
+                    "on-tertiary-container": "#8a8381",
+                    "on-primary-fixed-variant": "#474649",
+                    "tertiary": "#010100",
+                    "surface-container": "#f1edec",
+                    "surface": "#fdf8f8",
+                    "secondary-fixed": "#e3e2e6",
+                    "surface-variant": "#e5e2e1",
+                    "primary-container": "#1c1c1e",
+                    "inverse-primary": "#c8c6c8",
+                    "success-dark": "#30B350",
+                    "surface-container-low": "#f7f3f2",
+                    "pull-accent": "#378ADD",
+                    "border-dark": "#38383A",
+                    "error-container": "#ffdad6",
+                    "border-light": "#E5E5EA",
+                    "push-accent": "#D85A30",
+                    "on-tertiary-fixed": "#1f1b1a",
+                    "on-primary-fixed": "#1b1b1d",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#ebe7e7",
+                    "outline-variant": "#c7c6ca",
+                    "tertiary-container": "#1f1b1a",
+                    "pull-accent-dark": "#5BA0D9",
+                    "push-accent-dark": "#E57342",
+                    "primary-fixed": "#e4e2e4",
+                    "bg-secondary-light": "#F5F5F5",
+                    "on-error-container": "#93000a",
+                    "legs-accent": "#1D9E75",
+                    "surface-dim": "#ddd9d9",
+                    "outline": "#77767b",
+                    "on-surface": "#1c1b1b",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#858486",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c8c6c8",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#46464a",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c7c6ca",
+                    "on-secondary-fixed": "#1b1b1f",
+                    "tertiary-fixed-dim": "#cdc5c3",
+                    "surface-tint": "#5f5e60",
+                    "secondary": "#5e5e62",
+                    "on-surface-variant": "#46464a",
+                    "background": "#fdf8f8",
+                    "on-background": "#1c1b1b",
+                    "success": "#34C759",
+                    "bg-secondary-dark": "#1E1E1E"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-sm": "0.5rem",
+                    "stack-gap-md": "1rem",
+                    "stack-gap-lg": "1.5rem",
+                    "timer-safe-area": "3rem",
+                    "container-margin": "1rem"
+            },
+            "fontFamily": {
+                    "timer-display": [
+                            "JetBrains Mono"
+                    ],
+                    "subheadline": [
+                            "Lexend"
+                    ],
+                    "label-caps": [
+                            "JetBrains Mono"
+                    ],
+                    "headline-main": [
+                            "Lexend"
+                    ],
+                    "body-secondary": [
+                            "Lexend"
+                    ],
+                    "body-primary": [
+                            "Lexend"
+                    ]
+            },
+            "fontSize": {
+                    "timer-display": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "subheadline": [
+                            "17px",
+                            {
+                                    "lineHeight": "22px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-main": [
+                            "22px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-secondary": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-primary": [
+                            "17px",
+                            {
+                                    "lineHeight": "22px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased pb-24 selection:bg-pull-accent selection:text-white">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-container-margin py-stack-gap-sm max-w-7xl mx-auto docked full-width top-0 bg-surface dark:bg-surface flat no shadows sticky z-40">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest border border-outline-variant flex-shrink-0 cursor-pointer hover:bg-surface-container-high transition-colors">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a young fitness enthusiast, modern clean lighting, bright and energetic mood, aligned with a premium fitness app aesthetic, light background, minimalist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBanfsmCoOUS7JdsL-H6XoAIEzzEIb0EuvDDbk35FsXrXy8ucy4LbSyo9r_3i9l5tDv-iJNEVvieYqQaSZusEXopZWCjKNJi5i4lmhG2yZ2lHokadMbBVQLieM8KllJceE6KI9tjgNtW9Q03464BVjUKO0yAsZGq1KN2faSfp41zYIg8Hj494o0eGY0FUgodebc5AS_D7OQk5Eh0FXt0KmVovSN5NVtXsev3E5SwVZArKtUKGxrwj27eVLhsITVVHwiSsnx5jfWkuo"/>
+</div>
+<h1 class="font-headline-main text-headline-main font-bold text-primary dark:text-primary-fixed-dim">CallisthWout</h1>
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high transition-colors rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<main class="max-w-2xl mx-auto px-container-margin pt-stack-gap-md pb-stack-gap-lg flex flex-col gap-stack-gap-lg">
+<!-- Profile Header Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="col-span-1 md:col-span-3 bg-surface-container-lowest rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm border border-outline-variant/30">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-surface ring-2 ring-primary/10 relative">
+<img alt="Alex Chen Profile Picture" class="w-full h-full object-cover" data-alt="A professional headshot of a young fitness enthusiast, modern clean lighting, bright and energetic mood, aligned with a premium fitness app aesthetic, light background, minimalist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR7znpMW2qsQlPMyvCnQhQH2V-cGU96SaKzui2iOwhToEUqUoBmlk2yfoE2kGEKpCE44KddOaLKsuprprB21SfDqLNjT6Bqw-jbNiaWRDWsx8D6RjwDs9eQeecC6ZhjQbIvV4qf5HtlVvtzBVT4oKrdpY8wWNQjnvPueK__TtYS7XIBLQIQybLW4_OFzy5m3UyVwUuAaoSpi3za6AgnkJuj6JXhZtfyJQA291SjRpBjrBb1zME_tluvAyCIAjiORNo4HeI-ROKafI"/>
+<div class="absolute bottom-0 right-0 bg-primary text-on-primary w-6 h-6 rounded-full flex items-center justify-center border-2 border-surface">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+</div>
+</div>
+<h2 class="font-headline-main text-headline-main text-primary">Alex Chen</h2>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant mt-1">Free Tier Member</p>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section>
+<div class="flex justify-between items-end mb-stack-gap-sm">
+<h3 class="font-subheadline text-subheadline text-primary">Biometrics</h3>
+<button class="font-label-caps text-label-caps text-pull-accent hover:text-pull-accent-dark transition-colors uppercase tracking-wider">Update Metrics</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-sm flex flex-col justify-between aspect-square relative overflow-hidden group hover:border-pull-accent/30 transition-colors">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-container rounded-full opacity-50 transition-transform group-hover:scale-110"></div>
+<span class="material-symbols-outlined text-pull-accent relative z-10" style="font-variation-settings: 'FILL' 1;">monitor_weight</span>
+<div class="relative z-10 mt-auto">
+<p class="font-body-secondary text-body-secondary text-on-surface-variant mb-1">Weight</p>
+<p class="font-timer-display text-timer-display text-primary tracking-tighter">62<span class="text-xl font-subheadline text-on-surface-variant ml-1">kg</span></p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30 shadow-sm flex flex-col justify-between aspect-square relative overflow-hidden group hover:border-push-accent/30 transition-colors">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-container rounded-full opacity-50 transition-transform group-hover:scale-110"></div>
+<span class="material-symbols-outlined text-push-accent relative z-10" style="font-variation-settings: 'FILL' 1;">height</span>
+<div class="relative z-10 mt-auto">
+<p class="font-body-secondary text-body-secondary text-on-surface-variant mb-1">Height</p>
+<p class="font-timer-display text-timer-display text-primary tracking-tighter">170<span class="text-xl font-subheadline text-on-surface-variant ml-1">cm</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- App Preferences -->
+<section class="flex flex-col gap-3">
+<h3 class="font-subheadline text-subheadline text-primary mb-1">Preferences</h3>
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/30 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dark_mode</span>
+</div>
+<div>
+<p class="font-body-primary text-body-primary text-primary">Appearance</p>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">System default (Light)</p>
+</div>
+</div>
+<!-- Custom Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-variant appearance-none cursor-pointer transition-transform duration-200 ease-in-out" id="theme-toggle" name="toggle" style="left: 2px; top: 2px; z-index: 2;" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-7 rounded-full bg-surface-variant cursor-pointer border border-outline-variant/30" for="theme-toggle"></label>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/30 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+<div>
+<p class="font-body-primary text-body-primary text-primary">Daily Reminder</p>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">7:00 PM</p>
+</div>
+</div>
+<button class="text-primary hover:text-pull-accent transition-colors p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">edit_calendar</span>
+</button>
+</div>
+</section>
+<!-- Account Actions -->
+<section class="flex flex-col gap-3 mt-4">
+<h3 class="font-subheadline text-subheadline text-primary mb-1">Account</h3>
+<button class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/30 shadow-sm flex items-center justify-between w-full hover:bg-surface-container-low transition-colors text-left group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">restart_alt</span>
+</div>
+<p class="font-body-primary text-body-primary text-primary">Reset Progress</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="bg-error-container/20 rounded-xl p-4 border border-error/20 shadow-sm flex items-center justify-between w-full hover:bg-error-container/40 transition-colors text-left group mt-2">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-error-container/50 flex items-center justify-center text-error group-hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<p class="font-body-primary text-body-primary text-error font-medium">Logout</p>
+</div>
+</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant dark:border-border-dark shadow-lg rounded-t-xl md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed group w-16">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">fitness_center</span>
+<span class="font-label-caps text-label-caps text-[10px] tracking-tight">Training</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed group w-16">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="font-label-caps text-label-caps text-[10px] tracking-tight">Calendar</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed group w-16">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">restaurant</span>
+<span class="font-label-caps text-label-caps text-[10px] tracking-tight">Fuel</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed group w-16">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">video_library</span>
+<span class="font-label-caps text-label-caps text-[10px] tracking-tight">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-tertiary-container text-on-secondary-container dark:text-on-tertiary-container rounded-full px-4 py-1 Active: scale-90 transition-all duration-200 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-caps text-label-caps text-[10px] tracking-tight font-bold text-primary">Profile</span>
+</button>
+</nav>
+<!-- Desktop Navigation Alternative (Hidden on Mobile) -->
+<nav class="hidden md:flex fixed top-0 right-0 h-full w-64 bg-surface-container border-l border-outline-variant/30 flex-col py-8 px-4 z-30 pt-24">
+<div class="flex flex-col gap-2">
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors text-left">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="font-subheadline text-subheadline">Training</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors text-left">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-subheadline text-subheadline">Calendar</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors text-left">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-subheadline text-subheadline">Fuel</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors text-left">
+<span class="material-symbols-outlined">video_library</span>
+<span class="font-subheadline text-subheadline">Library</span>
+</button>
+<button class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container font-medium text-left">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-subheadline text-subheadline">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workout Complete</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#eae0de",
+                        "inverse-surface": "#313030",
+                        "surface-bright": "#fdf8f8",
+                        "on-secondary-container": "#626266",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#4b4644",
+                        "secondary-container": "#e0dfe3",
+                        "legs-accent-dark": "#2BBF8F",
+                        "primary": "#010102",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-tertiary-container": "#8a8381",
+                        "on-primary-fixed-variant": "#474649",
+                        "tertiary": "#010100",
+                        "surface-container": "#f1edec",
+                        "surface": "#fdf8f8",
+                        "secondary-fixed": "#e3e2e6",
+                        "surface-variant": "#e5e2e1",
+                        "primary-container": "#1c1c1e",
+                        "inverse-primary": "#c8c6c8",
+                        "success-dark": "#30B350",
+                        "surface-container-low": "#f7f3f2",
+                        "pull-accent": "#378ADD",
+                        "border-dark": "#38383A",
+                        "error-container": "#ffdad6",
+                        "border-light": "#E5E5EA",
+                        "push-accent": "#D85A30",
+                        "on-tertiary-fixed": "#1f1b1a",
+                        "on-primary-fixed": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "outline-variant": "#c7c6ca",
+                        "tertiary-container": "#1f1b1a",
+                        "pull-accent-dark": "#5BA0D9",
+                        "push-accent-dark": "#E57342",
+                        "primary-fixed": "#e4e2e4",
+                        "bg-secondary-light": "#F5F5F5",
+                        "on-error-container": "#93000a",
+                        "legs-accent": "#1D9E75",
+                        "surface-dim": "#ddd9d9",
+                        "outline": "#77767b",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#858486",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c8",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#46464a",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6ca",
+                        "on-secondary-fixed": "#1b1b1f",
+                        "tertiary-fixed-dim": "#cdc5c3",
+                        "surface-tint": "#5f5e60",
+                        "secondary": "#5e5e62",
+                        "on-surface-variant": "#46464a",
+                        "background": "#fdf8f8",
+                        "on-background": "#1c1b1b",
+                        "success": "#34C759",
+                        "bg-secondary-dark": "#1E1E1E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-sm": "0.5rem",
+                        "stack-gap-md": "1rem",
+                        "stack-gap-lg": "1.5rem",
+                        "timer-safe-area": "3rem",
+                        "container-margin": "1rem"
+                    },
+                    "fontFamily": {
+                        "timer-display": ["JetBrains Mono"],
+                        "subheadline": ["Lexend"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-main": ["Lexend"],
+                        "body-secondary": ["Lexend"],
+                        "body-primary": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "timer-display": ["48px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "subheadline": ["17px", { "lineHeight": "22px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-main": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-secondary": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-primary": ["17px", { "lineHeight": "22px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-primary antialiased min-h-screen flex flex-col items-center justify-center p-container-margin">
+<main class="w-full max-w-md flex flex-col items-center text-center space-y-stack-gap-lg pt-8 pb-12">
+<!-- Header / Celebration -->
+<div class="flex flex-col items-center space-y-4">
+<div class="w-24 h-24 bg-surface-container rounded-full flex items-center justify-center text-push-accent shadow-sm">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<h1 class="font-timer-display text-timer-display text-primary flex items-center justify-center gap-2">
+                    Day 14 <span class="text-3xl">🎉</span>
+</h1>
+<p class="font-headline-main text-headline-main text-on-surface-variant mt-2">Complete!</p>
+</div>
+</div>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-2 gap-4 w-full">
+<!-- Total Time -->
+<div class="col-span-2 bg-surface-container-high p-4 rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div class="text-left">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Total Time</p>
+<p class="font-headline-main text-headline-main text-primary">60:00</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Cals Burned</p>
+<p class="font-headline-main text-headline-main text-primary">450</p>
+</div>
+</div>
+<!-- Volume -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">fitness_center</span>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Volume</p>
+<p class="font-headline-main text-headline-main text-primary mt-1">24 Sets</p>
+</div>
+<!-- Journey Progress -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col items-start justify-center shadow-sm text-left relative overflow-hidden">
+<!-- Progress Background Bar (Mock) -->
+<div class="absolute bottom-0 left-0 h-1 bg-surface-variant w-full"></div>
+<div class="absolute bottom-0 left-0 h-1 bg-push-accent w-[23%]"></div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-1">Journey</p>
+<p class="font-subheadline text-subheadline text-primary">
+                    You're <span class="text-push-accent font-bold">23%</span> through your 60-day journey.
+                </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col gap-3 mt-8">
+<button class="w-full bg-push-accent text-on-primary font-headline-main text-headline-main py-4 rounded-[12px] shadow-md hover:bg-push-accent-dark transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">home</span>
+                Back to Home
+            </button>
+<button class="w-full border-[1.5px] border-outline text-primary font-subheadline text-subheadline py-4 rounded-[12px] hover:bg-surface-container transition-colors flex items-center justify-center gap-2">
+                Preview Tomorrow (Pull Day)
+                <span class="material-symbols-outlined text-pull-accent">arrow_forward</span>
+</button>
+</div>
+</main>
+</body></html>

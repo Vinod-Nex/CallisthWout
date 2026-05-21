@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications &amp; Reminders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#eae0de",
+                        "inverse-surface": "#313030",
+                        "surface-bright": "#fdf8f8",
+                        "on-secondary-container": "#626266",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#4b4644",
+                        "secondary-container": "#e0dfe3",
+                        "legs-accent-dark": "#2BBF8F",
+                        "primary": "#010102",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-tertiary-container": "#8a8381",
+                        "on-primary-fixed-variant": "#474649",
+                        "tertiary": "#010100",
+                        "surface-container": "#f1edec",
+                        "surface": "#fdf8f8",
+                        "secondary-fixed": "#e3e2e6",
+                        "surface-variant": "#e5e2e1",
+                        "primary-container": "#1c1c1e",
+                        "inverse-primary": "#c8c6c8",
+                        "success-dark": "#30B350",
+                        "surface-container-low": "#f7f3f2",
+                        "pull-accent": "#378ADD",
+                        "border-dark": "#38383A",
+                        "error-container": "#ffdad6",
+                        "border-light": "#E5E5EA",
+                        "push-accent": "#D85A30",
+                        "on-tertiary-fixed": "#1f1b1a",
+                        "on-primary-fixed": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "outline-variant": "#c7c6ca",
+                        "tertiary-container": "#1f1b1a",
+                        "pull-accent-dark": "#5BA0D9",
+                        "push-accent-dark": "#E57342",
+                        "primary-fixed": "#e4e2e4",
+                        "bg-secondary-light": "#F5F5F5",
+                        "on-error-container": "#93000a",
+                        "legs-accent": "#1D9E75",
+                        "surface-dim": "#ddd9d9",
+                        "outline": "#77767b",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#858486",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c8",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#46464a",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6ca",
+                        "on-secondary-fixed": "#1b1b1f",
+                        "tertiary-fixed-dim": "#cdc5c3",
+                        "surface-tint": "#5f5e60",
+                        "secondary": "#5e5e62",
+                        "on-surface-variant": "#46464a",
+                        "background": "#fdf8f8",
+                        "on-background": "#1c1b1b",
+                        "success": "#34C759",
+                        "bg-secondary-dark": "#1E1E1E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-sm": "0.5rem",
+                        "stack-gap-md": "1rem",
+                        "stack-gap-lg": "1.5rem",
+                        "timer-safe-area": "3rem",
+                        "container-margin": "1rem"
+                    },
+                    "fontFamily": {
+                        "timer-display": ["JetBrains Mono"],
+                        "subheadline": ["Lexend"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-main": ["Lexend"],
+                        "body-secondary": ["Lexend"],
+                        "body-primary": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "timer-display": ["48px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "subheadline": ["17px", { "lineHeight": "22px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-main": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-secondary": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-primary": ["17px", { "lineHeight": "22px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom styles for toggles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #34C759;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #34C759;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col md:hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-container-margin py-stack-gap-sm bg-surface sticky top-0 z-10">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-main text-headline-main text-primary text-center flex-1 pr-10">Notifications</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-container-margin py-stack-gap-md space-y-stack-gap-lg overflow-y-auto">
+<!-- Daily Routine Section -->
+<section>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-stack-gap-sm px-2 uppercase tracking-wider">Daily Routine</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-border-light shadow-sm overflow-hidden">
+<!-- Workout Reminder Item -->
+<div class="p-4 flex items-center justify-between border-b border-border-light bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<div>
+<h3 class="font-body-primary text-body-primary text-on-surface">Workout Reminder</h3>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">Push notifications</p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant top-1 bottom-0 left-0 right-auto z-10 transition-all duration-300" id="workout-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-8 rounded-full bg-surface-variant cursor-pointer transition-colors duration-300" for="workout-toggle"></label>
+</div>
+</div>
+<!-- Time Picker -->
+<div class="p-4 flex items-center justify-between bg-surface-container-low transition-opacity">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<h3 class="font-body-primary text-body-primary text-on-surface">Reminder Time</h3>
+</div>
+<button class="bg-surface-container-high px-4 py-2 rounded-lg font-timer-display text-subheadline text-primary flex items-center gap-2">
+                        7:00 PM
+                    </button>
+</div>
+</div>
+</section>
+<!-- Tracking & Community Section -->
+<section>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-stack-gap-sm px-2 uppercase tracking-wider">Tracking &amp; Community</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-border-light shadow-sm overflow-hidden">
+<!-- Nutrition Log Item -->
+<div class="p-4 flex items-center justify-between border-b border-border-light">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h3 class="font-body-primary text-body-primary text-on-surface">Nutrition Log</h3>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">Meal logging reminders</p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant top-1 bottom-0 left-0 right-auto z-10 transition-all duration-300" id="nutrition-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-8 rounded-full bg-surface-variant cursor-pointer transition-colors duration-300" for="nutrition-toggle"></label>
+</div>
+</div>
+<!-- Community Milestone Item -->
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div>
+<h3 class="font-body-primary text-body-primary text-on-surface">Community Milestones</h3>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">Friend activity &amp; cheers</p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant top-1 bottom-0 left-0 right-auto z-10 transition-all duration-300" id="community-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-8 rounded-full bg-surface-variant cursor-pointer transition-colors duration-300" for="community-toggle"></label>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

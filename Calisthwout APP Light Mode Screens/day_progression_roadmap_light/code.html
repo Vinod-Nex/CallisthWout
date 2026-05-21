@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>60-Day Roadmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#eae0de",
+                        "inverse-surface": "#313030",
+                        "surface-bright": "#fdf8f8",
+                        "on-secondary-container": "#626266",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#4b4644",
+                        "secondary-container": "#e0dfe3",
+                        "legs-accent-dark": "#2BBF8F",
+                        "primary": "#010102",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-tertiary-container": "#8a8381",
+                        "on-primary-fixed-variant": "#474649",
+                        "tertiary": "#010100",
+                        "surface-container": "#f1edec",
+                        "surface": "#fdf8f8",
+                        "secondary-fixed": "#e3e2e6",
+                        "surface-variant": "#e5e2e1",
+                        "primary-container": "#1c1c1e",
+                        "inverse-primary": "#c8c6c8",
+                        "success-dark": "#30B350",
+                        "surface-container-low": "#f7f3f2",
+                        "pull-accent": "#378ADD",
+                        "border-dark": "#38383A",
+                        "error-container": "#ffdad6",
+                        "border-light": "#E5E5EA",
+                        "push-accent": "#D85A30",
+                        "on-tertiary-fixed": "#1f1b1a",
+                        "on-primary-fixed": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "outline-variant": "#c7c6ca",
+                        "tertiary-container": "#1f1b1a",
+                        "pull-accent-dark": "#5BA0D9",
+                        "push-accent-dark": "#E57342",
+                        "primary-fixed": "#e4e2e4",
+                        "bg-secondary-light": "#F5F5F5",
+                        "on-error-container": "#93000a",
+                        "legs-accent": "#1D9E75",
+                        "surface-dim": "#ddd9d9",
+                        "outline": "#77767b",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#858486",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c8",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#46464a",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6ca",
+                        "on-secondary-fixed": "#1b1b1f",
+                        "tertiary-fixed-dim": "#cdc5c3",
+                        "surface-tint": "#5f5e60",
+                        "secondary": "#5e5e62",
+                        "on-surface-variant": "#46464a",
+                        "background": "#fdf8f8",
+                        "on-background": "#1c1b1b",
+                        "success": "#34C759",
+                        "bg-secondary-dark": "#1E1E1E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-sm": "0.5rem",
+                        "stack-gap-md": "1rem",
+                        "stack-gap-lg": "1.5rem",
+                        "timer-safe-area": "3rem",
+                        "container-margin": "1rem"
+                    },
+                    "fontFamily": {
+                        "timer-display": ["JetBrains Mono"],
+                        "subheadline": ["Lexend"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-main": ["Lexend"],
+                        "body-secondary": ["Lexend"],
+                        "body-primary": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "timer-display": ["48px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "subheadline": ["17px", { "lineHeight": "22px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-main": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-secondary": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-primary": ["17px", { "lineHeight": "22px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-primary min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- Top App Bar (Mobile hidden, Web visible) -->
+<header class="hidden md:flex flex-col bg-surface top-0 z-50">
+<div class="flex justify-between items-center w-full px-container-margin py-stack-gap-sm max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<h1 class="font-headline-main text-headline-main font-bold text-primary tracking-tight">CallisthWout</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="flex items-center gap-8">
+<a class="text-primary font-bold font-label-caps text-label-caps uppercase flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">fitness_center</span> Training
+                </a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase flex items-center gap-2 hover:bg-surface-container-high transition-colors p-2 rounded" href="#">
+<span class="material-symbols-outlined">calendar_month</span> Calendar
+                </a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase flex items-center gap-2 hover:bg-surface-container-high transition-colors p-2 rounded" href="#">
+<span class="material-symbols-outlined">restaurant</span> Fuel
+                </a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase flex items-center gap-2 hover:bg-surface-container-high transition-colors p-2 rounded" href="#">
+<span class="material-symbols-outlined">video_library</span> Library
+                </a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase flex items-center gap-2 hover:bg-surface-container-high transition-colors p-2 rounded" href="#">
+<span class="material-symbols-outlined">person</span> Profile
+                </a>
+</nav>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col w-full max-w-md mx-auto md:max-w-7xl md:px-container-margin md:py-8">
+<!-- Mobile Header (Web hidden) -->
+<div class="md:hidden flex justify-between items-center px-container-margin py-stack-gap-md sticky top-0 bg-background z-40 bg-opacity-95 backdrop-blur-sm">
+<h1 class="font-headline-main text-headline-main font-bold text-primary">Training</h1>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</div>
+<div class="px-container-margin py-stack-gap-md flex-grow flex flex-col gap-6">
+<!-- Progress Header -->
+<section class="bg-surface-container rounded-xl p-6 shadow-sm border border-surface-container-high">
+<div class="flex justify-between items-end mb-4">
+<div>
+<p class="font-label-caps text-label-caps text-secondary uppercase mb-1">Current Phase</p>
+<h2 class="font-headline-main text-headline-main text-primary">Phase 1: Foundation</h2>
+</div>
+<div class="text-right">
+<p class="font-headline-main text-headline-main text-push-accent font-bold">23%</p>
+<p class="font-label-caps text-label-caps text-secondary uppercase">Complete</p>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-push-accent rounded-full" style="width: 23%;"></div>
+</div>
+<div class="flex justify-between mt-3 font-label-caps text-label-caps text-secondary">
+<span>Day 1</span>
+<span>Day 60</span>
+</div>
+</section>
+<!-- Milestones Area -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-4 flex flex-col items-start gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-caps text-label-caps">30</div>
+<div>
+<p class="font-label-caps text-label-caps text-secondary uppercase">Milestone</p>
+<p class="font-subheadline text-subheadline text-primary">Hypertrophy Check</p>
+</div>
+</div>
+<div class="bg-surface-container-low border border-surface-container-highest rounded-lg p-4 flex flex-col items-start gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-caps text-label-caps">60</div>
+<div>
+<p class="font-label-caps text-label-caps text-secondary uppercase">Goal</p>
+<p class="font-subheadline text-subheadline text-primary">Strength Test</p>
+</div>
+</div>
+</section>
+<!-- 60 Day Grid -->
+<section class="bg-surface-container rounded-xl p-6 flex-grow">
+<h3 class="font-subheadline text-subheadline text-primary mb-4">Daily Tracking</h3>
+<div class="grid grid-cols-7 gap-2 place-items-center">
+<!-- Column Headers -->
+<div class="font-label-caps text-label-caps text-secondary text-center w-full">M</div>
+<div class="font-label-caps text-label-caps text-secondary text-center w-full">T</div>
+<div class="font-label-caps text-label-caps text-secondary text-center w-full">W</div>
+<div class="font-label-caps text-label-caps text-secondary text-center w-full">T</div>
+<div class="font-label-caps text-label-caps text-secondary text-center w-full">F</div>
+<div class="font-label-caps text-label-caps text-secondary text-center w-full">S</div>
+<div class="font-label-caps text-label-caps text-secondary text-center w-full">S</div>
+<!-- Days 1-13 (Completed) -->
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        1
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        2
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        3
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        4
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        5
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        6
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        7
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<!-- Week 2 Completed -->
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        8
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        9
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        10
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        11
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        12
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded bg-success-dark/10 text-success-dark border border-success-dark/20 flex items-center justify-center font-label-caps text-label-caps relative">
+                        13
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-success-dark rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<!-- Day 14 (Today) -->
+<div class="w-10 h-10 rounded bg-push-accent/10 text-push-accent border-2 border-push-accent flex items-center justify-center font-label-caps text-label-caps font-bold relative shadow-sm">
+                        14
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-push-accent rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+<!-- Future Days (Truncated for brevity, showing a few lines to establish pattern) -->
+<div class="w-10 h-10 rounded bg-surface text-secondary border border-surface-variant flex items-center justify-center font-label-caps text-label-caps">15</div>
+<div class="w-10 h-10 rounded bg-surface text-secondary border border-surface-variant flex items-center justify-center font-label-caps text-label-caps">16</div>
+<div class="w-10 h-10 rounded bg-surface text-secondary border border-surface-variant flex items-center justify-center font-label-caps text-label-caps">17</div>
+<div class="w-10 h-10 rounded bg-surface text-secondary border border-surface-variant flex items-center justify-center font-label-caps text-label-caps">18</div>
+<div class="w-10 h-10 rounded bg-surface text-secondary border border-surface-variant flex items-center justify-center font-label-caps text-label-caps">19</div>
+<div class="w-10 h-10 rounded bg-surface text-secondary border border-surface-variant flex items-center justify-center font-label-caps text-label-caps">20</div>
+<div class="w-10 h-10 rounded bg-surface text-secondary border border-surface-variant flex items-center justify-center font-label-caps text-label-caps">21</div>
+<!-- Skip ahead representation -->
+<div class="col-span-7 flex justify-center py-2">
+<span class="material-symbols-outlined text-secondary text-opacity-50">more_vert</span>
+</div>
+<!-- Day 60 -->
+<div class="col-span-7 flex justify-end w-full">
+<div class="w-10 h-10 rounded bg-surface-variant text-on-surface-variant border border-outline-variant flex items-center justify-center font-label-caps text-label-caps">60</div>
+</div>
+</div>
+</section>
+<!-- Bottom Action Button Container (Pushed above Nav) -->
+<div class="mt-auto pt-4 pb-2">
+<button class="w-full bg-push-accent text-on-primary rounded-xl py-4 px-6 font-subheadline text-subheadline font-bold flex justify-center items-center gap-2 shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    View Today's Protocol
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface-container shadow-lg rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-label-caps text-[10px] mt-1 font-medium">Training</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-caps text-[10px] mt-1">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-label-caps text-[10px] mt-1">Fuel</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">video_library</span>
+<span class="font-label-caps text-[10px] mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

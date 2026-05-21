@@ -1,0 +1,504 @@
+
+<h2 class="sr-only">2-Month Calisthenics Restart Plan — Push, Pull, Legs rotating daily with progressive weekly overload</h2>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.tab-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.tab-btn { padding: 6px 14px; font-size: 13px; font-weight: 500; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s; }
+.tab-btn.active { background: var(--color-background-secondary); color: var(--color-text-primary); border-color: var(--color-border-primary); }
+.tab-btn:hover:not(.active) { background: var(--color-background-secondary); }
+.section { display: none; }
+.section.active { display: block; }
+.week-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+.day-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 12px 14px; background: var(--color-background-primary); }
+.day-label { font-size: 11px; color: var(--color-text-tertiary); font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+.day-type { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+.day-type.push { color: #D85A30; }
+.day-type.pull { color: #378ADD; }
+.day-type.leg { color: #1D9E75; }
+.day-muscles { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+.workout-block { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 16px; margin-bottom: 12px; background: var(--color-background-primary); }
+.workout-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.workout-badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: var(--border-radius-md); }
+.badge-push { background: #FAECE7; color: #993C1D; }
+.badge-pull { background: #E6F1FB; color: #185FA5; }
+.badge-leg { background: #E1F5EE; color: #0F6E56; }
+.workout-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+.exercise-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.exercise-table th { text-align: left; color: var(--color-text-secondary); font-weight: 500; padding: 4px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.exercise-table td { padding: 6px 0; color: var(--color-text-primary); vertical-align: top; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.exercise-table tr:last-child td { border-bottom: none; }
+.exercise-table td:first-child { width: 42%; font-weight: 500; }
+.exercise-table td:nth-child(2) { width: 28%; color: var(--color-text-secondary); }
+.exercise-table td:nth-child(3) { width: 30%; color: var(--color-text-secondary); font-size: 12px; }
+.timing-pill { font-size: 11px; background: var(--color-background-secondary); border-radius: 20px; padding: 2px 8px; color: var(--color-text-secondary); white-space: nowrap; }
+.warmup-block { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 14px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
+.warmup-icon { font-size: 16px; color: var(--color-text-secondary); margin-top: 2px; }
+.warmup-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+.warmup-text strong { color: var(--color-text-primary); font-weight: 500; }
+.note-box { border-left: 2px solid var(--color-border-secondary); padding: 8px 12px; margin: 12px 0; font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+.week-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.week-number { font-size: 18px; font-weight: 500; color: var(--color-text-primary); }
+.week-theme { font-size: 13px; color: var(--color-text-secondary); }
+.progression-tag { font-size: 11px; padding: 3px 8px; border-radius: var(--border-radius-md); background: var(--color-background-info); color: var(--color-text-info); font-weight: 500; }
+.week-selector { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.week-btn { padding: 5px 12px; font-size: 12px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s; }
+.week-btn.active { background: var(--color-background-secondary); color: var(--color-text-primary); border-color: var(--color-border-primary); }
+.section-heading { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+.url-link { color: var(--color-text-info); font-size: 12px; text-decoration: none; }
+.url-link:hover { text-decoration: underline; }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+.stat-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px; }
+.stat-label { font-size: 11px; color: var(--color-text-tertiary); font-weight: 500; margin-bottom: 4px; }
+.stat-value { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+.stat-sub { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+.nutrition-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.nutrition-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px; background: var(--color-background-primary); }
+.nutrition-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 8px; }
+.nutrition-item { font-size: 13px; color: var(--color-text-secondary); padding: 3px 0; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; justify-content: space-between; }
+.nutrition-item:last-child { border-bottom: none; }
+.nutrition-val { font-weight: 500; color: var(--color-text-primary); }
+.progress-bar-wrap { margin: 10px 0; }
+.progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
+.progress-bar { height: 6px; background: var(--color-background-secondary); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; }
+</style>
+
+<div style="padding: 1.5rem 0">
+
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-label">Current weight</div>
+    <div class="stat-value">62 kg</div>
+    <div class="stat-sub">Height: 170 cm</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Target weight</div>
+    <div class="stat-value">70–72 kg</div>
+    <div class="stat-sub">+8–10 kg in 2 months</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Session length</div>
+    <div class="stat-value">60 min</div>
+    <div class="stat-sub">5 warm + 50 work + 5 cool</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Training split</div>
+    <div class="stat-value">PPL</div>
+    <div class="stat-sub">Push / Pull / Legs, repeat</div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('monthly')">Monthly calendar</button>
+  <button class="tab-btn" onclick="showTab('workouts')">Workouts by week</button>
+  <button class="tab-btn" onclick="showTab('nutrition')">Nutrition & recovery</button>
+  <button class="tab-btn" onclick="showTab('resources')">Warm-up & links</button>
+</div>
+
+<div id="monthly" class="section active">
+  <div class="section-heading">Month 1 — Rebuild strength & movement quality</div>
+  <div class="week-grid">
+    <div class="day-card"><div class="day-label">Day 1</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 2</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 3</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 4</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 5</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 6</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 7</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 8</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 9</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 10</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 11</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 12</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 13</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 14</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 15</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 16</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 17</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 18</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 19</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 20</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 21</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 22</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 23</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 24</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 25</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 26</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 27</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+    <div class="day-card"><div class="day-label">Day 28</div><div class="day-type push">Push</div><div class="day-muscles">Chest · Shoulders · Triceps</div></div>
+    <div class="day-card"><div class="day-label">Day 29</div><div class="day-type pull">Pull</div><div class="day-muscles">Back · Biceps</div></div>
+    <div class="day-card"><div class="day-label">Day 30</div><div class="day-type leg">Legs</div><div class="day-muscles">Quads · Hamstrings · Glutes · Calves</div></div>
+  </div>
+
+  <div class="section-heading">Month 2 — Progressive overload & muscle gain</div>
+  <div class="note-box">Same PPL cycle continues. Week 5–8 upgrades every exercise to a harder variation — weighted bag (20 kg) for pull/leg, archer push-ups and pike push-up to handstand prep for push. See "Workouts by week" for full details.</div>
+</div>
+
+<div id="workouts" class="section">
+  <div class="week-selector" id="weekSelector"></div>
+  <div id="weekContent"></div>
+</div>
+
+<div id="nutrition" class="section">
+  <div class="note-box">At 62 kg and 170 cm, you need a consistent caloric surplus of roughly 400–600 kcal above maintenance to gain 3–4 kg per month. Maintenance for your stats + daily training is about 2,400–2,500 kcal. Target: 2,900–3,100 kcal/day.</div>
+
+  <div class="nutrition-row">
+    <div class="nutrition-card">
+      <div class="nutrition-title">Daily macro targets</div>
+      <div class="nutrition-item"><span>Protein</span><span class="nutrition-val">135–145 g</span></div>
+      <div class="nutrition-item"><span>Carbohydrates</span><span class="nutrition-val">370–410 g</span></div>
+      <div class="nutrition-item"><span>Fats</span><span class="nutrition-val">75–85 g</span></div>
+      <div class="nutrition-item"><span>Total calories</span><span class="nutrition-val">~3,000 kcal</span></div>
+      <div class="nutrition-item"><span>Water</span><span class="nutrition-val">3.5–4 L/day</span></div>
+    </div>
+    <div class="nutrition-card">
+      <div class="nutrition-title">Meal timing</div>
+      <div class="nutrition-item"><span>Pre-workout (1 hr before)</span><span class="nutrition-val">Carbs + protein</span></div>
+      <div class="nutrition-item"><span>Post-workout (within 45 min)</span><span class="nutrition-val">Protein + carbs</span></div>
+      <div class="nutrition-item"><span>Meals per day</span><span class="nutrition-val">4–5</span></div>
+      <div class="nutrition-item"><span>Before bed</span><span class="nutrition-val">Casein or curd</span></div>
+    </div>
+  </div>
+
+  <div class="nutrition-card" style="margin-bottom: 10px;">
+    <div class="nutrition-title">Sample high-calorie day (Indian foods)</div>
+    <div class="nutrition-item"><span>Breakfast</span><span class="nutrition-val">4 eggs + 3 roti + peanut butter + banana</span></div>
+    <div class="nutrition-item"><span>Mid-morning</span><span class="nutrition-val">Whole milk (500 ml) + mixed nuts (50 g)</span></div>
+    <div class="nutrition-item"><span>Lunch</span><span class="nutrition-val">Dal + rice (2 cups) + chicken/paneer 150 g + sabzi</span></div>
+    <div class="nutrition-item"><span>Pre-workout</span><span class="nutrition-val">Banana + curd rice or 2 rotis</span></div>
+    <div class="nutrition-item"><span>Post-workout</span><span class="nutrition-val">Eggs / chicken 100 g + rice</span></div>
+    <div class="nutrition-item"><span>Dinner</span><span class="nutrition-val">Dal + rice + rajma or eggs + sabzi</span></div>
+    <div class="nutrition-item"><span>Before bed</span><span class="nutrition-val">Curd (200 g) or boiled eggs x 2</span></div>
+  </div>
+
+  <div class="section-heading">Recovery rules</div>
+  <div class="nutrition-card">
+    <div class="nutrition-item"><span>Sleep</span><span class="nutrition-val">7–9 hrs — non-negotiable for muscle synthesis</span></div>
+    <div class="nutrition-item"><span>Active recovery</span><span class="nutrition-val">Walk 20 min after meals on rest days</span></div>
+    <div class="nutrition-item"><span>Deload (week 4 & 8)</span><span class="nutrition-val">Reduce sets to 2, keep reps same</span></div>
+    <div class="nutrition-item"><span>Joint care</span><span class="nutrition-val">Wrist / shoulder mobility 5 min daily</span></div>
+  </div>
+</div>
+
+<div id="resources" class="section">
+  <div class="section-heading">Warm-up videos</div>
+  <div class="nutrition-card" style="margin-bottom:10px;">
+    <div class="nutrition-item"><span>Push day warm-up</span><span><a class="url-link" href="https://youtube.com/shorts/bDs8ez5hiSU">youtube.com/shorts/bDs8ez5hiSU</a></span></div>
+    <div class="nutrition-item"><span>Pull day warm-up</span><span><a class="url-link" href="https://youtube.com/shorts/PVV1Qo_94M0">youtube.com/shorts/PVV1Qo_94M0</a></span></div>
+    <div class="nutrition-item"><span>Leg day warm-up 1</span><span><a class="url-link" href="https://youtube.com/shorts/v5gAFyGUWiw">youtube.com/shorts/v5gAFyGUWiw</a></span></div>
+    <div class="nutrition-item"><span>Leg day warm-up 2</span><span><a class="url-link" href="https://youtube.com/shorts/h5yZ1wPov1U">youtube.com/shorts/h5yZ1wPov1U</a></span></div>
+  </div>
+
+  <div class="section-heading">Cool-down videos</div>
+  <div class="nutrition-card" style="margin-bottom:10px;">
+    <div class="nutrition-item"><span>Push day cool-down</span><span><a class="url-link" href="https://youtu.be/bgMNXt88RQ8">youtu.be/bgMNXt88RQ8</a></span></div>
+    <div class="nutrition-item"><span>Pull day cool-down</span><span><a class="url-link" href="https://youtu.be/_sQV7LXbddg">youtu.be/_sQV7LXbddg</a></span></div>
+    <div class="nutrition-item"><span>Leg day cool-down</span><span><a class="url-link" href="https://youtube.com/shorts/b8O0u9qnRS4">youtube.com/shorts/b8O0u9qnRS4</a></span></div>
+  </div>
+
+  <div class="section-heading">Exercise reference videos</div>
+  <div class="nutrition-card" style="margin-bottom:10px;">
+    <div class="nutrition-item"><span>Chest push-up variations</span><span><a class="url-link" href="https://www.youtube.com/watch?v=m4xE_jfSDyQ">youtube.com/watch?v=m4xE_jfSDyQ</a></span></div>
+    <div class="nutrition-item"><span>Shoulder variations</span><span><a class="url-link" href="https://www.youtube.com/watch?v=1KJrELeqq_o">youtube.com/watch?v=1KJrELeqq_o</a></span></div>
+    <div class="nutrition-item"><span>Tricep variations</span><span><a class="url-link" href="https://youtu.be/duOt9wjXJGY">youtu.be/duOt9wjXJGY</a></span></div>
+    <div class="nutrition-item"><span>Pull-up variations</span><span><a class="url-link" href="https://www.youtube.com/watch?v=pgX9kMxHmsc">youtube.com/watch?v=pgX9kMxHmsc</a></span></div>
+    <div class="nutrition-item"><span>Bicep variations</span><span><a class="url-link" href="https://www.youtube.com/shorts/_jjfkpugapY">youtube.com/shorts/_jjfkpugapY</a></span></div>
+    <div class="nutrition-item"><span>Leg workout main</span><span><a class="url-link" href="https://www.youtube.com/watch?v=2GpH94wyf6Q">youtube.com/watch?v=2GpH94wyf6Q</a></span></div>
+    <div class="nutrition-item"><span>Leg workout 2</span><span><a class="url-link" href="https://youtu.be/hI_X6tWcfNI">youtu.be/hI_X6tWcfNI</a></span></div>
+    <div class="nutrition-item"><span>Quads</span><span><a class="url-link" href="https://www.youtube.com/watch?v=_wARCz4ckBI">youtube.com/watch?v=_wARCz4ckBI</a></span></div>
+    <div class="nutrition-item"><span>Hamstrings</span><span><a class="url-link" href="https://www.youtube.com/watch?v=uViNpX7omLk">youtube.com/watch?v=uViNpX7omLk</a></span></div>
+    <div class="nutrition-item"><span>Glutes</span><span><a class="url-link" href="https://youtu.be/HzRwKt2NLQ8">youtu.be/HzRwKt2NLQ8</a></span></div>
+    <div class="nutrition-item"><span>Calves</span><span><a class="url-link" href="https://www.youtube.com/shorts/prec2tx_90w">youtube.com/shorts/prec2tx_90w</a></span></div>
+  </div>
+
+  <div class="section-heading">Session structure (every day)</div>
+  <div class="note-box">
+    <strong>0:00–5:00</strong> — Warm-up (specific video for each day type). No rest breaks.<br>
+    <strong>5:00–55:00</strong> — Main workout. Each exercise: 1.5 min work → 30 sec rest → next exercise.<br>
+    <strong>55:00–60:00</strong> — Cool-down (specific video for each day type). No rest breaks.
+  </div>
+</div>
+
+</div>
+
+<script>
+const weeks = [
+  {
+    num: 1, phase: "Month 1", theme: "Reactivation — standard difficulty, perfect form",
+    push: [
+      { name: "Wide push-ups", sets: "4 sets", reps: "10–12 reps", note: "Full ROM, controlled" },
+      { name: "Diamond push-ups", sets: "4 sets", reps: "10–12 reps", note: "Tricep focus" },
+      { name: "Pike push-ups", sets: "4 sets", reps: "10–12 reps", note: "Shoulder overhead press sim" },
+      { name: "Decline push-ups", sets: "4 sets", reps: "10–12 reps", note: "Upper chest" },
+      { name: "Dips (between chairs)", sets: "4 sets", reps: "10–12 reps", note: "Tricep lockout" },
+      { name: "Pseudo planche push-ups", sets: "4 sets", reps: "10 reps", note: "Lean forward, hands at hips" },
+    ],
+    pull: [
+      { name: "Dead hang", sets: "4 sets", reps: "30 sec", note: "Shoulder decompression" },
+      { name: "Wide grip pull-ups", sets: "4 sets", reps: "8–10 reps", note: "Lat width" },
+      { name: "Chin-ups", sets: "4 sets", reps: "10–12 reps", note: "Bicep-dominant" },
+      { name: "Inverted rows (table)", sets: "4 sets", reps: "12 reps", note: "Mid-back" },
+      { name: "Towel bicep curls", sets: "4 sets", reps: "10–12 reps", note: "Door + towel" },
+      { name: "Scapular pull-ups", sets: "4 sets", reps: "10 reps", note: "Scap retraction" },
+    ],
+    leg: [
+      { name: "Bodyweight squats", sets: "4 sets", reps: "20–25 reps", note: "Deep, full ROM" },
+      { name: "Bulgarian split squats", sets: "4 sets", reps: "10–12 each", note: "Rear foot elevated" },
+      { name: "Hip hinges / RDL", sets: "4 sets", reps: "12 reps", note: "Hamstring stretch" },
+      { name: "Glute bridges", sets: "4 sets", reps: "15 reps", note: "2 sec squeeze at top" },
+      { name: "Walking lunges", sets: "4 sets", reps: "12 each leg", note: "Long stride" },
+      { name: "Calf raises (single leg)", sets: "4 sets", reps: "15 reps", note: "Step edge, full ROM" },
+    ]
+  },
+  {
+    num: 2, phase: "Month 1", theme: "Increased reps — push to 12 on all exercises",
+    push: [
+      { name: "Wide push-ups", sets: "4 sets", reps: "12 reps", note: "Add 2 more than Wk1" },
+      { name: "Archer push-ups", sets: "4 sets", reps: "10 each side", note: "Unilateral chest load" },
+      { name: "Pike push-ups (feet elevated)", sets: "4 sets", reps: "12 reps", note: "Sharper angle" },
+      { name: "Decline push-ups (chair)", sets: "4 sets", reps: "12 reps", note: "Higher decline" },
+      { name: "Close grip dips", sets: "4 sets", reps: "12 reps", note: "Elbow tracking back" },
+      { name: "Hindu push-ups", sets: "4 sets", reps: "12 reps", note: "Shoulder mobility" },
+    ],
+    pull: [
+      { name: "Wide grip pull-ups", sets: "4 sets", reps: "10–12 reps", note: "Increase 2 reps" },
+      { name: "L-sit chin-ups", sets: "4 sets", reps: "8–10 reps", note: "Core + bicep" },
+      { name: "Commando pull-ups", sets: "4 sets", reps: "10 reps", note: "Alternate sides" },
+      { name: "Inverted rows (chest to bar)", sets: "4 sets", reps: "12 reps", note: "Full retraction" },
+      { name: "Hammer towel curls", sets: "4 sets", reps: "12 reps", note: "Neutral grip" },
+      { name: "Explosive pull-ups", sets: "4 sets", reps: "8 reps", note: "Controlled lower" },
+    ],
+    leg: [
+      { name: "Jump squats", sets: "4 sets", reps: "15 reps", note: "Explosive quad power" },
+      { name: "Bulgarian split squats", sets: "4 sets", reps: "12 each", note: "Pause at bottom 1 sec" },
+      { name: "Nordic curls (door anchor)", sets: "4 sets", reps: "8 reps", note: "Slow eccentric" },
+      { name: "Single leg glute bridge", sets: "4 sets", reps: "12 each", note: "Unilateral" },
+      { name: "Reverse lunges", sets: "4 sets", reps: "12 each", note: "Step back, knee hovers" },
+      { name: "Calf raises + hold at peak", sets: "4 sets", reps: "15 reps", note: "3 sec hold" },
+    ]
+  },
+  {
+    num: 3, phase: "Month 1", theme: "Add tempo — 2 sec down, explode up",
+    push: [
+      { name: "Slow archer push-ups", sets: "4 sets", reps: "10 each", note: "2 sec descent" },
+      { name: "Diamond push-ups (feet elevated)", sets: "4 sets", reps: "12 reps", note: "Combined stress" },
+      { name: "Pike push-up (max elevation)", sets: "4 sets", reps: "12 reps", note: "Almost vertical" },
+      { name: "Wide + decline combo", sets: "4 sets", reps: "8+8 reps", note: "Back-to-back" },
+      { name: "Tricep push-ups (straight elbows)", sets: "4 sets", reps: "12 reps", note: "Elbows pinned" },
+      { name: "Explosive diamond push-ups", sets: "4 sets", reps: "8 reps", note: "Clap optional" },
+    ],
+    pull: [
+      { name: "Slow negative pull-ups (5 sec)", sets: "4 sets", reps: "8 reps", note: "Eccentric overload" },
+      { name: "Archer pull-ups", sets: "4 sets", reps: "8 each", note: "Alternate arm straight" },
+      { name: "Close grip chin-ups", sets: "4 sets", reps: "12 reps", note: "Hands touching" },
+      { name: "Inverted rows (feet elevated)", sets: "4 sets", reps: "12 reps", note: "Horizontal pull harder" },
+      { name: "Chin-up hold at top", sets: "4 sets", reps: "5 reps, 3 sec hold", note: "Isometric peak" },
+      { name: "Towel curls (slow negative)", sets: "4 sets", reps: "12 reps", note: "4 sec lower" },
+    ],
+    leg: [
+      { name: "Pistol squat progression", sets: "4 sets", reps: "8–10 each", note: "Assisted if needed" },
+      { name: "Slow Bulgarian splits (3 sec down)", sets: "4 sets", reps: "10 each", note: "Eccentric" },
+      { name: "Nordic curls full", sets: "4 sets", reps: "8 reps", note: "Hands catch at bottom" },
+      { name: "Donkey kicks + hold", sets: "4 sets", reps: "12 each", note: "2 sec top contraction" },
+      { name: "Side lunges", sets: "4 sets", reps: "12 each", note: "Adductor stretch" },
+      { name: "Jump rope calf (simulate)", sets: "4 sets", reps: "30 sec", note: "Fast balls of feet" },
+    ]
+  },
+  {
+    num: 4, phase: "Month 1", theme: "Deload week — 2 sets per exercise, same reps, focus recovery",
+    push: [
+      { name: "Wide push-ups", sets: "2 sets", reps: "12 reps", note: "Active recovery" },
+      { name: "Pike push-ups", sets: "2 sets", reps: "10 reps", note: "Restore shoulder ROM" },
+      { name: "Diamond push-ups", sets: "2 sets", reps: "10 reps", note: "Easy pace" },
+      { name: "Dips", sets: "2 sets", reps: "10 reps", note: "Full ROM" },
+      { name: "Hindu push-ups", sets: "2 sets", reps: "10 reps", note: "Mobility emphasis" },
+      { name: "Wrist circles + push-up hold", sets: "2 sets", reps: "30 sec", note: "Joint prep" },
+    ],
+    pull: [
+      { name: "Dead hang", sets: "2 sets", reps: "45 sec", note: "Shoulder health" },
+      { name: "Wide pull-ups", sets: "2 sets", reps: "10 reps", note: "Easy pace" },
+      { name: "Chin-ups", sets: "2 sets", reps: "10 reps", note: "Full hang between" },
+      { name: "Inverted rows", sets: "2 sets", reps: "12 reps", note: "Controlled" },
+      { name: "Scapular pull-ups", sets: "2 sets", reps: "12 reps", note: "Shoulder blade focus" },
+      { name: "Towel curls", sets: "2 sets", reps: "10 reps", note: "Light effort" },
+    ],
+    leg: [
+      { name: "Bodyweight squats", sets: "2 sets", reps: "20 reps", note: "Deep, slow" },
+      { name: "Walking lunges", sets: "2 sets", reps: "12 each", note: "Recovery pace" },
+      { name: "Glute bridges", sets: "2 sets", reps: "15 reps", note: "Hip activation" },
+      { name: "Calf raises", sets: "2 sets", reps: "15 reps", note: "Full ROM" },
+      { name: "Hip circles + leg swings", sets: "2 sets", reps: "30 sec each", note: "Mobility" },
+      { name: "Pigeon stretch hold", sets: "2 sets", reps: "45 sec each", note: "Glute/hip" },
+    ]
+  },
+  {
+    num: 5, phase: "Month 2", theme: "Load increase — add 20 kg bag to pull/leg, harder push progressions",
+    push: [
+      { name: "Archer push-ups (full range)", sets: "4 sets", reps: "12 each", note: "Near one-arm" },
+      { name: "Pike push-up → wall handstand hold", sets: "4 sets", reps: "10 reps + 10 sec", note: "Power + static" },
+      { name: "Decline diamond push-ups", sets: "4 sets", reps: "12 reps", note: "Feet on chair" },
+      { name: "Explosive wide push-ups", sets: "4 sets", reps: "10 reps", note: "Hands leave floor" },
+      { name: "Tricep push-up + hold at bottom", sets: "4 sets", reps: "10 + 3 sec", note: "Isometric" },
+      { name: "Pseudo planche hold", sets: "4 sets", reps: "20 sec hold", note: "Scap depression" },
+    ],
+    pull: [
+      { name: "Weighted pull-ups (20 kg bag)", sets: "4 sets", reps: "6–8 reps", note: "Wear bag on back" },
+      { name: "Weighted chin-ups (20 kg bag)", sets: "4 sets", reps: "6–8 reps", note: "Supinated grip" },
+      { name: "Archer pull-ups", sets: "4 sets", reps: "8 each side", note: "Progressive one-arm" },
+      { name: "Slow negative pull-ups (5 sec)", sets: "4 sets", reps: "6 reps", note: "Eccentric overload" },
+      { name: "Commando pull-ups", sets: "4 sets", reps: "10 reps", note: "Full range, alternate" },
+      { name: "Towel curls (20 kg bag foot)", sets: "4 sets", reps: "10 reps", note: "Foot on bag for resistance" },
+    ],
+    leg: [
+      { name: "Weighted Bulgarian splits (bag)", sets: "4 sets", reps: "10 each", note: "Bag on shoulders" },
+      { name: "Pistol squats (full)", sets: "4 sets", reps: "8–10 each", note: "No assist" },
+      { name: "Nordic curls (slow negative)", sets: "4 sets", reps: "8 reps", note: "3 sec lower" },
+      { name: "Single leg glute bridge + bag", sets: "4 sets", reps: "12 each", note: "Bag on hip" },
+      { name: "Jump lunges (explosive)", sets: "4 sets", reps: "12 each", note: "Plyometric" },
+      { name: "Weighted calf raises (bag)", sets: "4 sets", reps: "15 reps", note: "Hold bag at chest" },
+    ]
+  },
+  {
+    num: 6, phase: "Month 2", theme: "High volume — increase reps, keep bag weight",
+    push: [
+      { name: "Archer push-ups (slower tempo)", sets: "4 sets", reps: "12 each", note: "3 sec descent" },
+      { name: "Wall handstand hold", sets: "4 sets", reps: "20–30 sec", note: "Build comfort" },
+      { name: "Decline archer push-ups", sets: "4 sets", reps: "10 each", note: "Feet elevated + unilateral" },
+      { name: "Explosive clap push-ups", sets: "4 sets", reps: "10 reps", note: "Plyometric chest" },
+      { name: "Dips with 20 kg bag", sets: "4 sets", reps: "8–10 reps", note: "Bag in lap if chair dip" },
+      { name: "Pike push-ups (slow + full)", sets: "4 sets", reps: "15 reps", note: "Volume increase" },
+    ],
+    pull: [
+      { name: "Weighted pull-ups (20 kg)", sets: "4 sets", reps: "8 reps", note: "+2 reps from Wk5" },
+      { name: "Muscle-up progression", sets: "4 sets", reps: "5–8 reps", note: "Pull + transition + dip" },
+      { name: "L-sit pull-ups", sets: "4 sets", reps: "8 reps", note: "Core compression" },
+      { name: "Weighted inverted rows (bag on chest)", sets: "4 sets", reps: "12 reps", note: "Full retraction" },
+      { name: "Chin-up 21s", sets: "4 sets", reps: "7+7+7", note: "Bottom, top, full" },
+      { name: "Towel curl (slow 4 sec negative)", sets: "4 sets", reps: "12 reps", note: "Time under tension" },
+    ],
+    leg: [
+      { name: "Pistol squats (weighted bag hold)", sets: "4 sets", reps: "8 each", note: "Bag as counterbalance then resistance" },
+      { name: "Jump squats (max height)", sets: "4 sets", reps: "15 reps", note: "Explosive" },
+      { name: "Nordic curls + push-up catch", sets: "4 sets", reps: "8 reps", note: "Full lower + push up" },
+      { name: "Step-ups with bag", sets: "4 sets", reps: "12 each", note: "Chair height, bag on back" },
+      { name: "Glute bridge marching", sets: "4 sets", reps: "20 reps", note: "Alternate leg lift" },
+      { name: "Calf raises (1.5 rep method)", sets: "4 sets", reps: "12 reps", note: "Up, half down, up, full down" },
+    ]
+  },
+  {
+    num: 7, phase: "Month 2", theme: "Max intensity — peak loading, muscle failure approach",
+    push: [
+      { name: "Weighted dips (bag on lap)", sets: "4 sets", reps: "8–10 reps", note: "Heaviest push yet" },
+      { name: "One-arm push-up progression", sets: "4 sets", reps: "8 each", note: "Knee or full" },
+      { name: "Handstand push-up (wall)", sets: "4 sets", reps: "6–8 reps", note: "Head to floor" },
+      { name: "Decline archer push-ups", sets: "4 sets", reps: "10 each", note: "Feet high, arm wide" },
+      { name: "Explosive dips", sets: "4 sets", reps: "8 reps", note: "Lock out aggressively" },
+      { name: "Planche lean hold", sets: "4 sets", reps: "25–30 sec", note: "Max scapular load" },
+    ],
+    pull: [
+      { name: "Weighted pull-ups (20 kg)", sets: "4 sets", reps: "8–10 reps", note: "Close to limit" },
+      { name: "Muscle-ups", sets: "4 sets", reps: "5–8 reps", note: "Full reps if possible" },
+      { name: "One-arm hang + row", sets: "4 sets", reps: "8 each", note: "Alternate arm" },
+      { name: "Explosive chin-ups (chest to bar)", sets: "4 sets", reps: "8 reps", note: "Pull high" },
+      { name: "Negative muscle-up (slow lower)", sets: "4 sets", reps: "5 reps", note: "10 sec descent" },
+      { name: "Weighted towel curls", sets: "4 sets", reps: "10 reps", note: "Standing tension" },
+    ],
+    leg: [
+      { name: "Weighted pistol squats (hold bag)", sets: "4 sets", reps: "8 each", note: "Full depth" },
+      { name: "Shrimp squats", sets: "4 sets", reps: "8 each", note: "Back foot held" },
+      { name: "Nordic curls (full)", sets: "4 sets", reps: "10 reps", note: "Consistent form" },
+      { name: "Weighted step-ups (bag)", sets: "4 sets", reps: "12 each", note: "Knee drive up" },
+      { name: "Jump lunge + hold (2 sec)", sets: "4 sets", reps: "10 each", note: "Power + static" },
+      { name: "Calf raises (bag at chest)", sets: "4 sets", reps: "20 reps", note: "Max volume" },
+    ]
+  },
+  {
+    num: 8, phase: "Month 2", theme: "Final deload + assessment — 2 sets, test max reps",
+    push: [
+      { name: "Max rep push-ups (test)", sets: "2 sets", reps: "Max reps", note: "Track PR" },
+      { name: "Archer push-ups", sets: "2 sets", reps: "10 each", note: "Active recovery" },
+      { name: "Handstand hold (wall)", sets: "2 sets", reps: "30 sec", note: "Skill work" },
+      { name: "Pike push-ups", sets: "2 sets", reps: "12 reps", note: "Light" },
+      { name: "Dips", sets: "2 sets", reps: "12 reps", note: "Easy pace" },
+      { name: "Wrist mobility + shoulder CARs", sets: "2 sets", reps: "60 sec each", note: "Joint health" },
+    ],
+    pull: [
+      { name: "Max rep pull-ups (test)", sets: "2 sets", reps: "Max reps", note: "Track PR" },
+      { name: "Weighted pull-up (20 kg)", sets: "2 sets", reps: "6 reps", note: "Strength test" },
+      { name: "Chin-ups", sets: "2 sets", reps: "10 reps", note: "Easy" },
+      { name: "Dead hang (max time)", sets: "2 sets", reps: "Max hold", note: "Grip test" },
+      { name: "Inverted rows", sets: "2 sets", reps: "12 reps", note: "Active recovery" },
+      { name: "Towel curls", sets: "2 sets", reps: "12 reps", note: "Light pump" },
+    ],
+    leg: [
+      { name: "Pistol squat test", sets: "2 sets", reps: "Max each leg", note: "Track PR" },
+      { name: "Jump squats", sets: "2 sets", reps: "15 reps", note: "Explosive finish" },
+      { name: "Bulgarian split squats", sets: "2 sets", reps: "12 each", note: "No bag" },
+      { name: "Glute bridges", sets: "2 sets", reps: "15 reps", note: "Recovery" },
+      { name: "Walking lunges", sets: "2 sets", reps: "12 each", note: "Easy pace" },
+      { name: "Full hip mobility flow", sets: "2 sets", reps: "90 sec", note: "Assessment prep" },
+    ]
+  }
+];
+
+function buildWeekContent(w) {
+  const types = [
+    { key: 'push', label: 'Push', badge: 'badge-push', type: 'push' },
+    { key: 'pull', label: 'Pull', badge: 'badge-pull', type: 'pull' },
+    { key: 'leg', label: 'Legs', badge: 'badge-leg', type: 'leg' },
+  ];
+  let html = `<div class="week-header">
+    <span class="week-number">Week ${w.num}</span>
+    <span class="week-theme">${w.theme}</span>
+  </div>`;
+
+  html += `<div class="warmup-block"><i class="ti ti-flame warmup-icon" aria-hidden="true"></i><div class="warmup-text"><strong>Every session:</strong> 5 min warm-up video (day-specific) → 50 min main work → 5 min cool-down video. Each exercise: 1.5 min work → 30 sec rest. No extra breaks during warm-up or cool-down.</div></div>`;
+
+  types.forEach(t => {
+    const exs = w[t.key];
+    html += `<div class="workout-block">
+      <div class="workout-header">
+        <span class="workout-badge ${t.badge}">${t.label}</span>
+        <span class="workout-title">${t.label === 'Push' ? 'Chest · Shoulders · Triceps' : t.label === 'Pull' ? 'Back · Biceps' : 'Quads · Hamstrings · Glutes · Calves'}</span>
+        <span class="timing-pill">4 sets each</span>
+      </div>
+      <table class="exercise-table">
+        <thead><tr><th>Exercise</th><th>Volume</th><th>Coaching note</th></tr></thead>
+        <tbody>`;
+    exs.forEach(ex => {
+      html += `<tr><td>${ex.name}</td><td>${ex.sets} · ${ex.reps}</td><td>${ex.note}</td></tr>`;
+    });
+    html += `</tbody></table></div>`;
+  });
+  return html;
+}
+
+function initWeeks() {
+  const sel = document.getElementById('weekSelector');
+  const content = document.getElementById('weekContent');
+  weeks.forEach((w, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'week-btn' + (i === 0 ? ' active' : '');
+    btn.textContent = `Wk ${w.num} (${w.phase})`;
+    btn.onclick = () => {
+      document.querySelectorAll('.week-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      content.innerHTML = buildWeekContent(w);
+    };
+    sel.appendChild(btn);
+  });
+  content.innerHTML = buildWeekContent(weeks[0]);
+}
+
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  if (id === 'workouts') initWeeks();
+}
+
+initWeeks();
+</script>
