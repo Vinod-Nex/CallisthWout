@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CallisthWout - Home Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed": "#1f1b1a",
+                "tertiary-fixed-dim": "#cdc5c3",
+                "outline": "#77767b",
+                "secondary-fixed-dim": "#c7c6ca",
+                "secondary-fixed": "#e3e2e6",
+                "tertiary-fixed": "#eae0de",
+                "on-error-container": "#93000a",
+                "surface-container-highest": "#e5e2e1",
+                "background": "#fdf8f8",
+                "on-secondary-fixed": "#1b1b1f",
+                "on-surface-variant": "#46464a",
+                "on-tertiary": "#ffffff",
+                "surface-bright": "#fdf8f8",
+                "surface-container": "#f1edec",
+                "border-light": "#E5E5EA",
+                "on-secondary-fixed-variant": "#46464a",
+                "surface-container-lowest": "#ffffff",
+                "bg-secondary-light": "#F5F5F5",
+                "legs-accent": "#1D9E75",
+                "tertiary": "#010100",
+                "on-tertiary-fixed-variant": "#4b4644",
+                "primary-fixed": "#e4e2e4",
+                "pull-accent-dark": "#5BA0D9",
+                "on-primary-fixed-variant": "#474649",
+                "surface-dim": "#ddd9d9",
+                "legs-accent-dark": "#2BBF8F",
+                "surface-variant": "#e5e2e1",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "on-surface": "#1c1b1b",
+                "pull-accent": "#378ADD",
+                "secondary": "#5e5e62",
+                "on-primary-container": "#858486",
+                "success-dark": "#30B350",
+                "primary-fixed-dim": "#c8c6c8",
+                "surface-container-low": "#f7f3f2",
+                "on-error": "#ffffff",
+                "inverse-on-surface": "#f4f0ef",
+                "inverse-primary": "#c8c6c8",
+                "secondary-container": "#e0dfe3",
+                "success": "#34C759",
+                "on-secondary-container": "#626266",
+                "outline-variant": "#c7c6ca",
+                "on-background": "#1c1b1b",
+                "inverse-surface": "#313030",
+                "bg-secondary-dark": "#1E1E1E",
+                "push-accent-dark": "#E57342",
+                "on-tertiary-container": "#8a8381",
+                "primary": "#010102",
+                "surface-container-high": "#ebe7e7",
+                "on-primary-fixed": "#1b1b1d",
+                "border-dark": "#38383A",
+                "surface-tint": "#5f5e60",
+                "primary-container": "#1c1c1e",
+                "push-accent": "#D85A30",
+                "surface": "#fdf8f8",
+                "error-container": "#ffdad6",
+                "error": "#ba1a1a",
+                "tertiary-container": "#1f1b1a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "stack-gap-sm": "0.5rem",
+                "container-margin": "1rem",
+                "stack-gap-lg": "1.5rem",
+                "timer-safe-area": "3rem",
+                "stack-gap-md": "1rem"
+        },
+        "fontFamily": {
+                "label-caps": [
+                        "JetBrains Mono"
+                ],
+                "body-secondary": [
+                        "Lexend"
+                ],
+                "subheadline": [
+                        "Lexend"
+                ],
+                "headline-main": [
+                        "Lexend"
+                ],
+                "body-primary": [
+                        "Lexend"
+                ],
+                "timer-display": [
+                        "JetBrains Mono"
+                ]
+        },
+        "fontSize": {
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-secondary": [
+                        "13px",
+                        {
+                                "lineHeight": "18px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "subheadline": [
+                        "17px",
+                        {
+                                "lineHeight": "22px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-main": [
+                        "22px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-primary": [
+                        "17px",
+                        {
+                                "lineHeight": "22px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "timer-display": [
+                        "48px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .material-symbols-outlined[style*="'FILL' 1"] {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-[#121212] text-white font-body-primary antialiased min-h-screen pb-24 md:pb-0 pt-16 md:pt-20">
+<!-- TopAppBar (from JSON) -->
+<header class="fixed docked full-width top-0 w-full z-50 bg-[#121212] shadow-sm md:shadow-none flat no shadows flex justify-between items-center px-container-margin py-stack-gap-sm max-w-7xl mx-auto md:hidden hidden md:flex">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#1E1E1E] overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a fit young man with short dark hair, smiling confidently in a modern, well-lit fitness studio setting. The lighting is soft and natural, emphasizing a healthy and active lifestyle. The background is slightly blurred to keep focus on the face, fitting the clean, modern aesthetic of the CallisthWout app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqCydMUqTWrldq1KTnkrvoHns1bfxPcDmc8Q09HgMYFIWc48SdKFlBEEPS2OQaTNyypxvr3doRdVAJRHupFjnGpcy6lemsjfKbVsOibYtHznXo-zkYdR_NRsQVKbVkWoGFz-uGrgw0yxDWuqXH7TlKzNtWtie_XIS3dkk7fUpBzR4Z4PB-aJvWocGlCC7Zdcj1ffZI8Lu_dLGMU6BC_tzziM2q5meJg1G7Yfh3whRLfvfFHAdxeayhgvZFpZyZaZBFtRzK1wsbw0Y"/>
+</div>
+<div>
+<h1 class="font-headline-main text-headline-main font-bold text-white">CallisthWout</h1>
+</div>
+</div>
+<!-- Web Navigation (Hidden on Mobile) -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-white font-bold hover:bg-[#1E1E1E] transition-colors px-3 py-2 rounded-lg" href="#">Training</a>
+<a class="font-label-caps text-label-caps text-[#8E8E93] hover:bg-[#1E1E1E] transition-colors px-3 py-2 rounded-lg" href="#">Calendar</a>
+<a class="font-label-caps text-label-caps text-[#8E8E93] hover:bg-[#1E1E1E] transition-colors px-3 py-2 rounded-lg" href="#">Fuel</a>
+<a class="font-label-caps text-label-caps text-[#8E8E93] hover:bg-[#1E1E1E] transition-colors px-3 py-2 rounded-lg" href="#">Library</a>
+</nav>
+<button aria-label="notifications" class="p-2 text-white hover:bg-[#1E1E1E] transition-colors rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Mobile Top Header (Specific to requested dashboard features) -->
+<header class="md:hidden fixed top-0 w-full z-40 bg-[#121212]/90 backdrop-blur-md px-container-margin py-4 flex justify-between items-center">
+<div>
+<p class="font-body-secondary text-body-secondary text-[#8E8E93]">Good morning,</p>
+<h1 class="font-headline-main text-headline-main text-white">Alex</h1>
+</div>
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#1E1E1E]">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a fit young man with short dark hair, smiling confidently in a modern, well-lit fitness studio setting. The lighting is soft and natural, emphasizing a healthy and active lifestyle. The background is slightly blurred to keep focus on the face, fitting the clean, modern aesthetic of the CallisthWout app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Farv7Vs0xYK47INB0wUK6RqJYXLELCNGEApEmtSmNxG6b7fuixod3h8cZhKVaFXDenpTOlRjG365dy9QtfqCAOTlhKakjT8qRl3me7mbeiIB-LjGPF6Rv4SOCzngWgu4i7vkkAdrA5dBDhF9_zPBfZ0Jeh3RcGd5kcUis-4fGjWHwOEnS4onHImZV_4fM8Fk3G8ANzMpMAmhlEZqVC1_JAcNc13f8z1SGiOzn2zY_-70WYtUuODAphAIbyxnvsUTa_P-FwLJMlk"/>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin md:px-8 py-stack-gap-lg flex flex-col gap-stack-gap-lg">
+<!-- Progress Ring & Motivation Section -->
+<section class="flex flex-col md:flex-row items-center justify-between bg-[#1E1E1E] rounded-xl p-6 md:p-8 border border-[#38383A]">
+<div class="relative w-40 h-40 flex items-center justify-center shrink-0 mb-6 md:mb-0">
+<!-- SVG Ring -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-[#2C2C2E]" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-push-accent-dark" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-dasharray="282.7" stroke-dashoffset="216" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-main text-headline-main text-push-accent-dark">Day 14</span>
+<span class="font-label-caps text-label-caps text-[#8E8E93]">OF 60</span>
+</div>
+</div>
+<div class="flex-1 md:ml-10 text-center md:text-left">
+<h2 class="font-headline-main text-headline-main text-white mb-2">Consistency is Key</h2>
+<p class="font-body-secondary text-body-secondary text-[#8E8E93] max-w-md">You're making solid progress on your 60-day challenge. Keep the momentum going strong today!</p>
+</div>
+</section>
+<!-- 7-Day Calendar Strip -->
+<section class="mb-2">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-subheadline text-subheadline text-white">This Week</h3>
+<button class="font-label-caps text-label-caps text-push-accent-dark flex items-center gap-1">
+        VIEW ALL <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="flex justify-between md:justify-start md:gap-4 overflow-x-auto pb-2 scrollbar-hide">
+<!-- Days before -->
+<div class="flex flex-col items-center gap-1 min-w-[3rem]">
+<span class="font-label-caps text-label-caps text-[#8E8E93]">MON</span>
+<div class="w-10 h-10 rounded-full bg-[#1E1E1E] flex items-center justify-center relative border border-[#38383A]">
+<span class="font-body-secondary text-body-secondary text-white">11</span>
+<div class="absolute inset-0 bg-success-dark/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-success-dark text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[3rem]">
+<span class="font-label-caps text-label-caps text-[#8E8E93]">TUE</span>
+<div class="w-10 h-10 rounded-full bg-[#1E1E1E] flex items-center justify-center relative border border-[#38383A]">
+<span class="font-body-secondary text-body-secondary text-white">12</span>
+<div class="absolute inset-0 bg-success-dark/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-success-dark text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[3rem]">
+<span class="font-label-caps text-label-caps text-[#8E8E93]">WED</span>
+<div class="w-10 h-10 rounded-full bg-[#1E1E1E] flex items-center justify-center border border-[#38383A]">
+<span class="font-body-secondary text-body-secondary text-white">13</span>
+<div class="w-1 h-1 rounded-full bg-[#8E8E93] absolute bottom-1"></div>
+</div>
+</div>
+<!-- Current Day -->
+<div class="flex flex-col items-center gap-1 min-w-[3.5rem]">
+<span class="font-label-caps text-label-caps text-push-accent-dark font-bold">THU</span>
+<div class="w-12 h-12 rounded-full border-2 border-push-accent-dark bg-[#121212] flex items-center justify-center shadow-sm">
+<span class="font-body-primary text-body-primary font-bold text-push-accent-dark">14</span>
+</div>
+</div>
+<!-- Days after -->
+<div class="flex flex-col items-center gap-1 min-w-[3rem]">
+<span class="font-label-caps text-label-caps text-[#8E8E93]">FRI</span>
+<div class="w-10 h-10 rounded-full bg-[#1E1E1E] flex items-center justify-center border border-[#38383A]">
+<span class="font-body-secondary text-body-secondary text-white">15</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[3rem]">
+<span class="font-label-caps text-label-caps text-[#8E8E93]">SAT</span>
+<div class="w-10 h-10 rounded-full bg-[#1E1E1E] flex items-center justify-center border border-[#38383A]">
+<span class="font-body-secondary text-body-secondary text-white">16</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[3rem]">
+<span class="font-label-caps text-label-caps text-[#8E8E93]">SUN</span>
+<div class="w-10 h-10 rounded-full bg-[#1E1E1E] flex items-center justify-center border border-[#38383A]">
+<span class="font-body-secondary text-body-secondary text-white">17</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Today's Workout Card -->
+<section>
+<h3 class="font-subheadline text-subheadline text-white mb-4">Today's Protocol</h3>
+<div class="bg-[#1E1E1E] rounded-xl overflow-hidden shadow-sm border border-[#38383A] relative">
+<!-- Decorative background element for Push theme -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-push-accent-dark/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<div class="p-6 md:p-8 flex flex-col gap-6 relative z-10">
+<div class="flex justify-between items-start">
+<div>
+<div class="inline-block px-3 py-1 rounded-full bg-push-accent-dark/20 text-push-accent-dark font-label-caps text-[10px] mb-3">
+              WEEK 3 THEME
+            </div>
+<h4 class="font-headline-main text-headline-main text-white">Push Day</h4>
+<p class="font-body-secondary text-body-secondary text-[#8E8E93] mt-1">Tempo Focus</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-[#121212] flex items-center justify-center text-push-accent-dark shadow-sm border border-[#38383A]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded bg-[#121212] border border-[#38383A] font-label-caps text-[11px] text-[#8E8E93]">Chest</span>
+<span class="px-3 py-1.5 rounded bg-[#121212] border border-[#38383A] font-label-caps text-[11px] text-[#8E8E93]">Shoulders</span>
+<span class="px-3 py-1.5 rounded bg-[#121212] border border-[#38383A] font-label-caps text-[11px] text-[#8E8E93]">Triceps</span>
+</div>
+<div class="flex gap-6 mt-2 pb-6 border-b border-[#38383A]">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-[#8E8E93] mb-1">DURATION</span>
+<span class="font-subheadline text-subheadline text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 45 min
+            </span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-[#8E8E93] mb-1">INTENSITY</span>
+<span class="font-subheadline text-subheadline text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-push-accent-dark" style="font-variation-settings: 'FILL' 1;">local_fire_department</span> High
+            </span>
+</div>
+</div>
+<button class="w-full py-4 rounded-xl bg-gradient-to-r from-push-accent-dark to-[#F07A54] text-white font-subheadline text-subheadline shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 mt-2">
+          Start Today's Workout
+          <span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Recovery Tip Banner -->
+<section class="mt-4">
+<div class="bg-[#1E1E1E] rounded-xl p-5 border border-pull-accent-dark/30 flex items-start gap-4 shadow-sm relative overflow-hidden">
+<!-- Subtle blue tint for recovery context -->
+<div class="absolute inset-0 bg-pull-accent-dark/5 pointer-events-none"></div>
+<div class="w-10 h-10 rounded-full bg-pull-accent-dark/10 flex items-center justify-center text-pull-accent-dark shrink-0 relative z-10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-subheadline text-subheadline text-white mb-1">Recovery Tip</h4>
+<p class="font-body-secondary text-body-secondary text-[#8E8E93]">Sleep 7-9h for optimal muscle growth. Deep sleep triggers HGH release essential for repairing tissue damaged during today's workout.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (from JSON) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-[#1E1E1E] border-t border-[#38383A] docked full-width rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-push-accent-dark/20 text-push-accent-dark rounded-full px-4 py-1 hover:text-white" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-label-caps text-label-caps">Training</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8E8E93] px-4 py-1 hover:text-white" href="#">
+<span class="material-symbols-outlined mb-1">calendar_month</span>
+<span class="font-label-caps text-label-caps">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8E8E93] px-4 py-1 hover:text-white" href="#">
+<span class="material-symbols-outlined mb-1">restaurant</span>
+<span class="font-label-caps text-label-caps">Fuel</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8E8E93] px-4 py-1 hover:text-white" href="#">
+<span class="material-symbols-outlined mb-1">video_library</span>
+<span class="font-label-caps text-label-caps">Library</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Day Progression - CallisthWout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1c1b1b",
+                        "surface": "#fdf8f8",
+                        "surface-variant": "#e5e2e1",
+                        "push-accent": "#D85A30",
+                        "border-light": "#E5E5EA",
+                        "on-secondary-fixed-variant": "#46464a",
+                        "outline": "#77767b",
+                        "inverse-on-surface": "#f4f0ef",
+                        "secondary-fixed-dim": "#c7c6ca",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1f1b1a",
+                        "pull-accent-dark": "#5BA0D9",
+                        "on-tertiary-container": "#8a8381",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fdf8f8",
+                        "tertiary-fixed": "#eae0de",
+                        "primary-fixed-dim": "#c8c6c8",
+                        "success-dark": "#30B350",
+                        "tertiary-fixed-dim": "#cdc5c3",
+                        "surface-container-highest": "#e5e2e1",
+                        "push-accent-dark": "#E57342",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#5f5e60",
+                        "on-primary-fixed-variant": "#474649",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1c1c1e",
+                        "tertiary": "#010100",
+                        "surface-container": "#f1edec",
+                        "legs-accent-dark": "#2BBF8F",
+                        "on-background": "#1c1b1b",
+                        "pull-accent": "#378ADD",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5e5e62",
+                        "outline-variant": "#c7c6ca",
+                        "secondary-fixed": "#e3e2e6",
+                        "on-secondary-fixed": "#1b1b1f",
+                        "tertiary-container": "#1f1b1a",
+                        "on-primary-container": "#858486",
+                        "surface-dim": "#ddd9d9",
+                        "on-surface-variant": "#46464a",
+                        "surface-container-low": "#f7f3f2",
+                        "error-container": "#ffdad6",
+                        "background": "#fdf8f8",
+                        "primary-fixed": "#e4e2e4",
+                        "bg-secondary-light": "#F5F5F5",
+                        "primary": "#010102",
+                        "on-primary-fixed": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "success": "#34C759",
+                        "inverse-surface": "#313030",
+                        "inverse-primary": "#c8c6c8",
+                        "bg-secondary-dark": "#1E1E1E",
+                        "secondary-container": "#e0dfe3",
+                        "legs-accent": "#1D9E75",
+                        "border-dark": "#38383A",
+                        "on-tertiary-fixed-variant": "#4b4644",
+                        "on-secondary-container": "#626266",
+                        "surface-container-high": "#ebe7e7",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-lg": "1.5rem",
+                        "container-margin": "1rem",
+                        "timer-safe-area": "3rem",
+                        "stack-gap-md": "1rem",
+                        "stack-gap-sm": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "body-secondary": ["Lexend"],
+                        "body-primary": ["Lexend"],
+                        "timer-display": ["JetBrains Mono"],
+                        "subheadline": ["Lexend"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-main": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-secondary": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-primary": ["17px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "timer-display": ["48px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "subheadline": ["17px", { "lineHeight": "22px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-main": ["22px", { "lineHeight": "28px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #121212; /* Explicit dark bg for the canvas since the prompt asked for dark mode, but the config doesn't have a specific dark background hex, relying on general dark mode patterns */
+            color: #ffffff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#121212] text-on-primary min-h-screen flex flex-col font-body-primary">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-container-margin py-stack-gap-sm max-w-7xl mx-auto bg-surface dark:bg-surface flat no shadows docked full-width top-0 border-b-0 sticky z-40" style="background-color: #1E1E1E;">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<h1 class="font-headline-main text-headline-main font-bold text-primary dark:text-primary-fixed-dim">CallisthWout</h1>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col px-container-margin py-stack-gap-lg max-w-lg mx-auto w-full pb-32">
+<!-- Header Section -->
+<div class="mb-stack-gap-lg text-center">
+<h2 class="font-headline-main text-headline-main text-on-primary mb-2">60-Day Roadmap</h2>
+<p class="font-body-secondary text-body-secondary text-primary-fixed-dim px-4">Complete Day 60 to unlock your transformation certificate and auto-restart the cycle.</p>
+</div>
+<!-- Progress Grid (Bento style representation) -->
+<div class="bg-bg-secondary-dark rounded-xl p-stack-gap-md border border-border-dark mb-stack-gap-lg shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center mb-stack-gap-md">
+<span class="font-subheadline text-subheadline text-on-primary">Phase 1: Foundation</span>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim bg-secondary-container dark:bg-tertiary-container px-2 py-1 rounded">23% Complete</span>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Days 1-7 (Completed) -->
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">1</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">2</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">3</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">4</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">5</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">6</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">7</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Days 8-14 -->
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">8</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">9</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">10</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">11</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">12</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-[#2A2A2C] border border-success-dark/30 text-success-dark">
+<span class="font-label-caps text-label-caps">13</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Current Day 14 (Push Accent) -->
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-push-accent/20 border-2 border-push-accent text-push-accent shadow-[0_0_12px_rgba(216,90,48,0.5)]">
+<span class="font-label-caps text-label-caps font-bold">14</span>
+<span class="w-1.5 h-1.5 rounded-full bg-push-accent mt-1 animate-pulse"></span>
+</div>
+<!-- Days 15-21 (Upcoming) -->
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-surface-tint/10 border border-border-dark text-on-surface-variant">
+<span class="font-label-caps text-label-caps">15</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-surface-tint/10 border border-border-dark text-on-surface-variant">
+<span class="font-label-caps text-label-caps">16</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-surface-tint/10 border border-border-dark text-on-surface-variant">
+<span class="font-label-caps text-label-caps">17</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-surface-tint/10 border border-border-dark text-on-surface-variant">
+<span class="font-label-caps text-label-caps">18</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-surface-tint/10 border border-border-dark text-on-surface-variant">
+<span class="font-label-caps text-label-caps">19</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-surface-tint/10 border border-border-dark text-on-surface-variant">
+<span class="font-label-caps text-label-caps">20</span>
+</div>
+<div class="aspect-square rounded flex flex-col items-center justify-center bg-surface-tint/10 border border-border-dark text-on-surface-variant">
+<span class="font-label-caps text-label-caps">21</span>
+</div>
+</div>
+<div class="mt-4 flex justify-between items-center text-primary-fixed-dim">
+<span class="font-body-secondary text-body-secondary flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-success-dark"></span> Completed</span>
+<span class="font-body-secondary text-body-secondary flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-push-accent"></span> Today (Push)</span>
+</div>
+</div>
+<!-- Milestones Bento Cards -->
+<div class="grid grid-cols-2 gap-stack-gap-md mb-stack-gap-lg">
+<!-- Milestone Day 30 -->
+<div class="bg-bg-secondary-dark rounded-xl p-stack-gap-md border border-border-dark relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-pull-accent-dark/10 rounded-full blur-xl group-hover:bg-pull-accent-dark/20 transition-all"></div>
+<div class="flex items-start justify-between mb-2">
+<span class="material-symbols-outlined text-pull-accent-dark" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim">Day 30</span>
+</div>
+<h3 class="font-subheadline text-subheadline text-on-primary mb-1">Halfway Mark</h3>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">Endurance Test</p>
+<div class="mt-3 h-1 w-full bg-surface-tint/20 rounded-full overflow-hidden">
+<div class="h-full bg-pull-accent-dark w-[46%]"></div>
+</div>
+</div>
+<!-- Milestone Day 60 -->
+<div class="bg-bg-secondary-dark rounded-xl p-stack-gap-md border border-border-dark relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-push-accent/10 rounded-full blur-xl group-hover:bg-push-accent/20 transition-all"></div>
+<div class="flex items-start justify-between mb-2">
+<span class="material-symbols-outlined text-push-accent" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim">Day 60</span>
+</div>
+<h3 class="font-subheadline text-subheadline text-on-primary mb-1">Apex Reached</h3>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">Certificate Unlock</p>
+<div class="mt-3 h-1 w-full bg-surface-tint/20 rounded-full overflow-hidden">
+<div class="h-full bg-push-accent w-[23%]"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Button (Contextual for this screen, pinned above nav if present) -->
+<div class="fixed bottom-[80px] md:bottom-stack-gap-lg left-0 w-full px-container-margin max-w-lg mx-auto right-0 z-40">
+<button class="w-full bg-push-accent text-on-primary font-subheadline text-subheadline py-4 rounded-[12px] shadow-[0_4px_14px_rgba(216,90,48,0.3)] hover:bg-push-accent-dark active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_arrow</span>
+            View Today's Protocol
+        </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface-container dark:bg-surface-container-highest border-t-0 rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-label-caps text-label-caps mt-1">Training</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-caps text-label-caps mt-1">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+<span class="font-label-caps text-label-caps mt-1">Fuel</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed" href="#">
+<span class="material-symbols-outlined" data-icon="video_library">video_library</span>
+<span class="font-label-caps text-label-caps mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-tertiary-container text-on-secondary-container dark:text-on-tertiary-container rounded-full px-4 py-1 scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

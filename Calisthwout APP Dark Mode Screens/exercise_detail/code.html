@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exercise Detail - CallisthWout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1c1b1b",
+                    "surface": "#fdf8f8",
+                    "surface-variant": "#e5e2e1",
+                    "push-accent": "#D85A30",
+                    "border-light": "#E5E5EA",
+                    "on-secondary-fixed-variant": "#46464a",
+                    "outline": "#77767b",
+                    "inverse-on-surface": "#f4f0ef",
+                    "secondary-fixed-dim": "#c7c6ca",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#1f1b1a",
+                    "pull-accent-dark": "#5BA0D9",
+                    "on-tertiary-container": "#8a8381",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#fdf8f8",
+                    "tertiary-fixed": "#eae0de",
+                    "primary-fixed-dim": "#c8c6c8",
+                    "success-dark": "#30B350",
+                    "tertiary-fixed-dim": "#cdc5c3",
+                    "surface-container-highest": "#e5e2e1",
+                    "push-accent-dark": "#E57342",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#5f5e60",
+                    "on-primary-fixed-variant": "#474649",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1c1c1e",
+                    "tertiary": "#010100",
+                    "surface-container": "#f1edec",
+                    "legs-accent-dark": "#2BBF8F",
+                    "on-background": "#1c1b1b",
+                    "pull-accent": "#378ADD",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#5e5e62",
+                    "outline-variant": "#c7c6ca",
+                    "secondary-fixed": "#e3e2e6",
+                    "on-secondary-fixed": "#1b1b1f",
+                    "tertiary-container": "#1f1b1a",
+                    "on-primary-container": "#858486",
+                    "surface-dim": "#ddd9d9",
+                    "on-surface-variant": "#46464a",
+                    "surface-container-low": "#f7f3f2",
+                    "error-container": "#ffdad6",
+                    "background": "#fdf8f8",
+                    "primary-fixed": "#e4e2e4",
+                    "bg-secondary-light": "#F5F5F5",
+                    "primary": "#010102",
+                    "on-primary-fixed": "#1b1b1d",
+                    "on-tertiary": "#ffffff",
+                    "success": "#34C759",
+                    "inverse-surface": "#313030",
+                    "inverse-primary": "#c8c6c8",
+                    "bg-secondary-dark": "#1E1E1E",
+                    "secondary-container": "#e0dfe3",
+                    "legs-accent": "#1D9E75",
+                    "border-dark": "#38383A",
+                    "on-tertiary-fixed-variant": "#4b4644",
+                    "on-secondary-container": "#626266",
+                    "surface-container-high": "#ebe7e7",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-lg": "1.5rem",
+                    "container-margin": "1rem",
+                    "timer-safe-area": "3rem",
+                    "stack-gap-md": "1rem",
+                    "stack-gap-sm": "0.5rem"
+            },
+            "fontFamily": {
+                    "body-secondary": ["Lexend"],
+                    "body-primary": ["Lexend"],
+                    "timer-display": ["JetBrains Mono"],
+                    "subheadline": ["Lexend"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-main": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-secondary": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-primary": ["17px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "timer-display": ["48px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "subheadline": ["17px", {"lineHeight": "22px", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-main": ["22px", {"lineHeight": "28px", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: theme('colors.surface'); color: theme('colors.on-surface'); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen pb-[100px]">
+<!-- Top Navigation (Task-Focused: Back Action) -->
+<header class="flex justify-between items-center px-container-margin py-stack-gap-md sticky top-0 bg-surface/90 backdrop-blur-md z-40">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-main text-headline-main text-primary">Wide Push-ups</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</header>
+<main class="max-w-3xl mx-auto">
+<!-- Hero Image -->
+<section class="px-container-margin mb-stack-gap-lg">
+<div class="w-full h-64 md:h-80 rounded-xl bg-surface-container-high overflow-hidden relative shadow-sm border border-border-light">
+<img class="w-full h-full object-cover" data-alt="A highly detailed, cinematic shot of a muscular athletic person performing a wide-grip push-up in a modern, brightly lit gym environment. The lighting is high-key and soft, perfectly highlighting the muscle tension in the chest and shoulders during the movement. The aesthetic is clean, professional, and minimalist, utilizing a bright light-mode palette of pristine whites, soft grays, and energetic deep orange accents. The overall mood is intensely focused, disciplined, and motivational, capturing the peak moment of physical exertion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA84dLaJ3vDmcYENtMObVXkAqwEryrrX4xzPjZkwNXjRvIyukEdVrf0NGaL1b50_v_64LAM5Sy2wYopvhjSJu4HxWO7DLg9LbCTlm5ECHIWFsxXIu8biNRST3pheh4rYYA2Wu2-X3Z14-tP6ijE8lOrTykh-fi5ZFDtNHIEiyRZkqVjBveNDe5PKoM2bSRSc6ENcT2bFjsZcKpwGt8MSpl-qjbSCQ40X14JIA7vryv3a3BbKgJl4V6FK0835dmoGC0-oT940tNXTkI"/>
+<!-- Overlay Gradient for contrast -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+</section>
+<!-- Bento Grid Details -->
+<section class="px-container-margin grid grid-cols-2 gap-stack-gap-sm mb-stack-gap-lg">
+<!-- Sets & Reps -->
+<div class="bg-surface-container rounded-xl p-4 flex flex-col justify-center border border-border-light relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-push-accent"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-widest">Target</span>
+<div class="flex items-end gap-1">
+<span class="font-headline-main text-headline-main text-push-accent leading-none">4</span>
+<span class="font-subheadline text-subheadline text-on-surface-variant pb-0.5">Sets</span>
+<span class="font-headline-main text-headline-main text-push-accent leading-none ml-2">12</span>
+<span class="font-subheadline text-subheadline text-on-surface-variant pb-0.5">Reps</span>
+</div>
+</div>
+<!-- Tempo -->
+<div class="bg-surface-container rounded-xl p-4 flex flex-col justify-center border border-border-light">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-widest">Tempo</span>
+<span class="font-subheadline text-subheadline text-on-surface">2s down, explode up</span>
+</div>
+<!-- Focus -->
+<div class="col-span-2 bg-surface-container rounded-xl p-4 flex items-center gap-4 border border-border-light">
+<div class="w-12 h-12 rounded-full bg-push-accent/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-push-accent text-2xl" style="font-variation-settings: 'FILL' 1;">accessibility_new</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-0.5 uppercase tracking-widest">Primary Focus</span>
+<span class="font-subheadline text-subheadline text-on-surface">Chest &amp; Shoulders</span>
+</div>
+</div>
+</section>
+<!-- Coaching Notes -->
+<section class="px-container-margin mb-stack-gap-lg">
+<h2 class="font-headline-main text-headline-main text-primary mb-stack-gap-sm">Coaching Notes</h2>
+<div class="bg-surface-container-low rounded-xl p-5 border border-border-light shadow-sm">
+<ul class="space-y-3 font-body-primary text-body-primary text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-push-accent shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Place hands significantly wider than shoulder-width apart to isolate the pectoral muscles.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-push-accent shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Maintain a rigid plank position; do not let your hips sag or hike up.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-push-accent shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Lower slowly with control, then push back up explosively.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Progress Chart (Rep Consistency) -->
+<section class="px-container-margin mb-stack-gap-lg">
+<div class="flex items-center justify-between mb-stack-gap-sm">
+<h2 class="font-headline-main text-headline-main text-primary">Rep Consistency</h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant">LAST 5 SESSIONS</span>
+</div>
+<div class="bg-surface-container rounded-xl p-5 border border-border-light h-48 flex flex-col justify-end relative">
+<!-- Grid Lines -->
+<div class="absolute inset-0 p-5 flex flex-col justify-between pointer-events-none">
+<div class="w-full border-t border-border-light/50"></div>
+<div class="w-full border-t border-border-light/50"></div>
+<div class="w-full border-t border-border-light/50"></div>
+<div class="w-full border-t border-border-light/50"></div>
+</div>
+<!-- Bars -->
+<div class="w-full h-full flex items-end justify-between gap-2 z-10 relative mt-4">
+<div class="w-full flex flex-col items-center gap-2 group">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">10</span>
+<div class="w-full bg-surface-variant rounded-t-md relative overflow-hidden transition-all duration-300 hover:bg-push-accent/50" style="height: 60%">
+<div class="absolute bottom-0 w-full bg-push-accent rounded-t-md" style="height: 100%"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">S1</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">11</span>
+<div class="w-full bg-surface-variant rounded-t-md relative overflow-hidden transition-all duration-300 hover:bg-push-accent/50" style="height: 70%">
+<div class="absolute bottom-0 w-full bg-push-accent rounded-t-md" style="height: 100%"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">S2</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">12</span>
+<div class="w-full bg-surface-variant rounded-t-md relative overflow-hidden transition-all duration-300 hover:bg-push-accent/50" style="height: 80%">
+<div class="absolute bottom-0 w-full bg-push-accent rounded-t-md" style="height: 100%"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">S3</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">12</span>
+<div class="w-full bg-surface-variant rounded-t-md relative overflow-hidden transition-all duration-300 hover:bg-push-accent/50" style="height: 80%">
+<div class="absolute bottom-0 w-full bg-push-accent rounded-t-md" style="height: 100%"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">S4</span>
+</div>
+<!-- Highlighted Current/Latest -->
+<div class="w-full flex flex-col items-center gap-2 group">
+<span class="font-label-caps text-label-caps text-push-accent font-bold">14</span>
+<div class="w-full bg-surface-variant rounded-t-md relative overflow-hidden shadow-[0_0_15px_rgba(216,90,48,0.3)]" style="height: 95%">
+<div class="absolute bottom-0 w-full bg-push-accent rounded-t-md" style="height: 100%"></div>
+</div>
+<span class="font-label-caps text-label-caps text-push-accent font-bold">LST</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Primary Action Button (Fixed Bottom) -->
+<div class="fixed bottom-0 left-0 w-full p-container-margin bg-gradient-to-t from-surface via-surface to-transparent pt-10 z-50 pointer-events-none">
+<div class="max-w-3xl mx-auto pointer-events-auto">
+<button class="w-full bg-push-accent text-on-primary font-headline-main text-headline-main py-4 rounded-xl shadow-[0_8px_20px_-4px_rgba(216,90,48,0.4)] flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                Start Exercise
+            </button>
+</div>
+</div>
+</body></html>

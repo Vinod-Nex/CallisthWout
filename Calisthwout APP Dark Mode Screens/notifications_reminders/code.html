@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications &amp; Reminders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1c1b1b",
+                      "surface": "#fdf8f8",
+                      "surface-variant": "#e5e2e1",
+                      "push-accent": "#D85A30",
+                      "border-light": "#E5E5EA",
+                      "on-secondary-fixed-variant": "#46464a",
+                      "outline": "#77767b",
+                      "inverse-on-surface": "#f4f0ef",
+                      "secondary-fixed-dim": "#c7c6ca",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#1f1b1a",
+                      "pull-accent-dark": "#5BA0D9",
+                      "on-tertiary-container": "#8a8381",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#fdf8f8",
+                      "tertiary-fixed": "#eae0de",
+                      "primary-fixed-dim": "#c8c6c8",
+                      "success-dark": "#30B350",
+                      "tertiary-fixed-dim": "#cdc5c3",
+                      "surface-container-highest": "#e5e2e1",
+                      "push-accent-dark": "#E57342",
+                      "on-error-container": "#93000a",
+                      "surface-tint": "#5f5e60",
+                      "on-primary-fixed-variant": "#474649",
+                      "error": "#ba1a1a",
+                      "primary-container": "#1c1c1e",
+                      "tertiary": "#010100",
+                      "surface-container": "#f1edec",
+                      "legs-accent-dark": "#2BBF8F",
+                      "on-background": "#1c1b1b",
+                      "pull-accent": "#378ADD",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#5e5e62",
+                      "outline-variant": "#c7c6ca",
+                      "secondary-fixed": "#e3e2e6",
+                      "on-secondary-fixed": "#1b1b1f",
+                      "tertiary-container": "#1f1b1a",
+                      "on-primary-container": "#858486",
+                      "surface-dim": "#ddd9d9",
+                      "on-surface-variant": "#46464a",
+                      "surface-container-low": "#f7f3f2",
+                      "error-container": "#ffdad6",
+                      "background": "#fdf8f8",
+                      "primary-fixed": "#e4e2e4",
+                      "bg-secondary-light": "#F5F5F5",
+                      "primary": "#010102",
+                      "on-primary-fixed": "#1b1b1d",
+                      "on-tertiary": "#ffffff",
+                      "success": "#34C759",
+                      "inverse-surface": "#313030",
+                      "inverse-primary": "#c8c6c8",
+                      "bg-secondary-dark": "#1E1E1E",
+                      "secondary-container": "#e0dfe3",
+                      "legs-accent": "#1D9E75",
+                      "border-dark": "#38383A",
+                      "on-tertiary-fixed-variant": "#4b4644",
+                      "on-secondary-container": "#626266",
+                      "surface-container-high": "#ebe7e7",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap-lg": "1.5rem",
+                      "container-margin": "1rem",
+                      "timer-safe-area": "3rem",
+                      "stack-gap-md": "1rem",
+                      "stack-gap-sm": "0.5rem"
+              },
+              "fontFamily": {
+                      "body-secondary": [
+                              "Lexend"
+                      ],
+                      "body-primary": [
+                              "Lexend"
+                      ],
+                      "timer-display": [
+                              "JetBrains Mono"
+                      ],
+                      "subheadline": [
+                              "Lexend"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-main": [
+                              "Lexend"
+                      ]
+              },
+              "fontSize": {
+                      "body-secondary": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-primary": [
+                              "17px",
+                              {
+                                      "lineHeight": "22px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "timer-display": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "subheadline": [
+                              "17px",
+                              {
+                                      "lineHeight": "22px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-main": [
+                              "22px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#121212] text-on-primary min-h-screen font-body-primary selection:bg-push-accent-dark selection:text-white">
+<!-- Top App Bar (Modified for transactional back-flow) -->
+<header class="bg-[#121212] flex justify-between items-center w-full px-container-margin py-stack-gap-sm max-w-7xl mx-auto sticky top-0 z-50">
+<button aria-label="Go back" class="text-primary-fixed-dim hover:text-white transition-colors p-2 -ml-2 rounded-full active:bg-white/10">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="font-headline-main text-headline-main font-bold text-primary-fixed-dim">Notifications</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-xl mx-auto px-container-margin pt-stack-gap-lg pb-timer-safe-area">
+<p class="font-body-secondary text-body-secondary text-on-surface-variant mb-stack-gap-lg px-2">
+            Control how CallisthWout gets your attention. Keep alerts on to stay consistent with your training goals.
+        </p>
+<!-- Settings Group 1: Routine -->
+<section class="mb-stack-gap-lg bg-bg-secondary-dark rounded-xl border border-border-dark overflow-hidden">
+<div class="px-4 py-3 bg-[#1A1A1A] border-b border-border-dark flex items-center gap-2">
+<span class="material-symbols-outlined text-pull-accent-dark text-sm" style="font-variation-settings: 'FILL' 1;">routine</span>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Daily Routine</h2>
+</div>
+<!-- Daily Workout Reminder Toggle -->
+<div class="p-4 border-b border-border-dark flex justify-between items-center bg-bg-secondary-dark hover:bg-[#252525] transition-colors">
+<div>
+<p class="font-subheadline text-subheadline text-white mb-1">Daily Workout Reminder</p>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">Get a nudge to start your scheduled session.</p>
+</div>
+<!-- Custom Toggle Switch (Active) -->
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-push-accent-dark transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-push-accent-dark focus:ring-offset-2 focus:ring-offset-[#121212]" role="switch">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<!-- Time Picker Sub-setting (Shown when reminder is on) -->
+<div class="p-4 flex justify-between items-center bg-[#181818]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+<p class="font-body-primary text-body-primary text-on-surface-variant">Reminder Time</p>
+</div>
+<button class="font-timer-display text-lg tracking-tight font-bold text-pull-accent-dark bg-[#121212] px-3 py-1.5 rounded-lg border border-border-dark hover:border-pull-accent-dark transition-colors">
+                    7:00 PM
+                </button>
+</div>
+</section>
+<!-- Settings Group 2: Logging & Community -->
+<section class="mb-stack-gap-lg bg-bg-secondary-dark rounded-xl border border-border-dark overflow-hidden">
+<div class="px-4 py-3 bg-[#1A1A1A] border-b border-border-dark flex items-center gap-2">
+<span class="material-symbols-outlined text-legs-accent-dark text-sm" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Tracking &amp; Community</h2>
+</div>
+<!-- Nutrition Log Prompt Toggle -->
+<div class="p-4 border-b border-border-dark flex justify-between items-center bg-bg-secondary-dark hover:bg-[#252525] transition-colors">
+<div class="pr-4">
+<p class="font-subheadline text-subheadline text-white mb-1">Nutrition Log Prompt</p>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">Post-workout reminder to log your macros and hydration.</p>
+</div>
+<!-- Custom Toggle Switch (Inactive) -->
+<button aria-checked="false" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-secondary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-push-accent-dark focus:ring-offset-2 focus:ring-offset-[#121212]" role="switch">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-variant shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<!-- Community Milestone Alerts Toggle -->
+<div class="p-4 flex justify-between items-center bg-bg-secondary-dark hover:bg-[#252525] transition-colors">
+<div class="pr-4">
+<p class="font-subheadline text-subheadline text-white mb-1">Community Milestone Alerts</p>
+<p class="font-body-secondary text-body-secondary text-on-surface-variant">Notifications when friends hit new PRs or complete challenges.</p>
+</div>
+<!-- Custom Toggle Switch (Active) -->
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-push-accent-dark transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-push-accent-dark focus:ring-offset-2 focus:ring-offset-[#121212]" role="switch">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</section>
+</main>
+<!-- Navigation Suppressed: This is a transactional settings screen -->
+</body></html>

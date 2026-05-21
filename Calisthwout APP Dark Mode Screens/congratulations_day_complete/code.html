@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workout Complete</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1c1b1b",
+                      "surface": "#fdf8f8",
+                      "surface-variant": "#e5e2e1",
+                      "push-accent": "#D85A30",
+                      "border-light": "#E5E5EA",
+                      "on-secondary-fixed-variant": "#46464a",
+                      "outline": "#77767b",
+                      "inverse-on-surface": "#f4f0ef",
+                      "secondary-fixed-dim": "#c7c6ca",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#1f1b1a",
+                      "pull-accent-dark": "#5BA0D9",
+                      "on-tertiary-container": "#8a8381",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#fdf8f8",
+                      "tertiary-fixed": "#eae0de",
+                      "primary-fixed-dim": "#c8c6c8",
+                      "success-dark": "#30B350",
+                      "tertiary-fixed-dim": "#cdc5c3",
+                      "surface-container-highest": "#e5e2e1",
+                      "push-accent-dark": "#E57342",
+                      "on-error-container": "#93000a",
+                      "surface-tint": "#5f5e60",
+                      "on-primary-fixed-variant": "#474649",
+                      "error": "#ba1a1a",
+                      "primary-container": "#1c1c1e",
+                      "tertiary": "#010100",
+                      "surface-container": "#f1edec",
+                      "legs-accent-dark": "#2BBF8F",
+                      "on-background": "#1c1b1b",
+                      "pull-accent": "#378ADD",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#5e5e62",
+                      "outline-variant": "#c7c6ca",
+                      "secondary-fixed": "#e3e2e6",
+                      "on-secondary-fixed": "#1b1b1f",
+                      "tertiary-container": "#1f1b1a",
+                      "on-primary-container": "#858486",
+                      "surface-dim": "#ddd9d9",
+                      "on-surface-variant": "#46464a",
+                      "surface-container-low": "#f7f3f2",
+                      "error-container": "#ffdad6",
+                      "background": "#fdf8f8",
+                      "primary-fixed": "#e4e2e4",
+                      "bg-secondary-light": "#F5F5F5",
+                      "primary": "#010102",
+                      "on-primary-fixed": "#1b1b1d",
+                      "on-tertiary": "#ffffff",
+                      "success": "#34C759",
+                      "inverse-surface": "#313030",
+                      "inverse-primary": "#c8c6c8",
+                      "bg-secondary-dark": "#1E1E1E",
+                      "secondary-container": "#e0dfe3",
+                      "legs-accent": "#1D9E75",
+                      "border-dark": "#38383A",
+                      "on-tertiary-fixed-variant": "#4b4644",
+                      "on-secondary-container": "#626266",
+                      "surface-container-high": "#ebe7e7",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap-lg": "1.5rem",
+                      "container-margin": "1rem",
+                      "timer-safe-area": "3rem",
+                      "stack-gap-md": "1rem",
+                      "stack-gap-sm": "0.5rem"
+              },
+              "fontFamily": {
+                      "body-secondary": ["Lexend"],
+                      "body-primary": ["Lexend"],
+                      "timer-display": ["JetBrains Mono"],
+                      "subheadline": ["Lexend"],
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-main": ["Lexend"]
+              },
+              "fontSize": {
+                      "body-secondary": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "body-primary": ["17px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "timer-display": ["48px", {"lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "subheadline": ["17px", {"lineHeight": "22px", "fontWeight": "500"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-main": ["22px", {"lineHeight": "28px", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-primary text-on-primary min-h-screen flex flex-col font-body-primary">
+<!-- Celebration Header / Confetti Area -->
+<div class="relative w-full h-48 sm:h-64 flex items-center justify-center overflow-hidden bg-gradient-to-b from-push-accent/20 to-primary">
+<div class="absolute inset-0 opacity-50 bg-[url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80')] bg-cover bg-center" data-alt="A dark, modern abstract background with subtle glowing particle effects resembling confetti. The lighting is focused and energetic, with warm, motivational accents against a deep, sleek dark mode canvas. The texture is smooth and digital, creating a sense of celebration without cluttering the screen. Minimalist, high-performance fitness aesthetic." style="mix-blend-mode: overlay;"></div>
+<div class="z-10 text-center px-container-margin pt-timer-safe-area">
+<span class="material-symbols-outlined text-success-dark text-6xl mb-stack-gap-sm block mx-auto" style="font-variation-settings: 'FILL' 1;">stars</span>
+<h1 class="font-timer-display text-timer-display text-on-primary">Day 14</h1>
+<p class="font-headline-main text-headline-main text-push-accent mt-2">Complete! 🎉</p>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-start px-container-margin py-stack-gap-lg max-w-2xl mx-auto w-full">
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-gap-md w-full mb-stack-gap-lg">
+<!-- Stat Card 1 -->
+<div class="bg-bg-secondary-dark border border-border-dark rounded-xl p-stack-gap-md flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant mb-2">timer</span>
+<span class="font-label-caps text-label-caps text-outline-variant uppercase">Total Time</span>
+<span class="font-subheadline text-subheadline text-on-primary mt-1">60:00</span>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-bg-secondary-dark border border-border-dark rounded-xl p-stack-gap-md flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant mb-2">fitness_center</span>
+<span class="font-label-caps text-label-caps text-outline-variant uppercase">Volume</span>
+<span class="font-subheadline text-subheadline text-on-primary mt-1">24 Sets</span>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-bg-secondary-dark border border-border-dark rounded-xl p-stack-gap-md flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant mb-2">local_fire_department</span>
+<span class="font-label-caps text-label-caps text-outline-variant uppercase">Cals Burned</span>
+<span class="font-subheadline text-subheadline text-on-primary mt-1">450</span>
+</div>
+</div>
+<!-- Motivational Message -->
+<div class="bg-surface-tint/10 border border-push-accent/30 rounded-xl p-stack-gap-lg w-full text-center mb-timer-safe-area">
+<p class="font-body-primary text-body-primary text-secondary-fixed-dim">
+                You're <span class="font-subheadline text-subheadline text-push-accent">23%</span> through your 60-day journey.
+            </p>
+<p class="font-subheadline text-subheadline text-on-primary mt-2">Keep the momentum!</p>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col gap-stack-gap-sm mt-auto">
+<button class="w-full bg-push-accent text-on-primary font-subheadline text-subheadline py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-push-accent-dark transition-colors">
+<span class="material-symbols-outlined">home</span>
+                Back to Home
+            </button>
+<button class="w-full bg-transparent border-[1.5px] border-border-dark text-on-primary font-subheadline text-subheadline py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-bg-secondary-dark transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+                Preview Tomorrow (Pull Day)
+            </button>
+</div>
+</main>
+</body></html>
